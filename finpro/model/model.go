@@ -59,7 +59,6 @@ type Question struct {
 	QuestionID   string    `gorm:"column:question_id;type:char(36);primaryKey"`
 	QuestionText string    `gorm:"column:question_text;type:text;not null"`
 	Category     *string   `gorm:"column:category;type:varchar(80)"`
-	Weight       int       `gorm:"column:weight;default:1"`
 	ScaleMin     int       `gorm:"column:scale_min;default:1"`
 	ScaleMax     int       `gorm:"column:scale_max;default:5"`
 	CreatedByID  *string   `gorm:"column:created_by;type:char(36)"`
@@ -226,4 +225,5 @@ type EvaluationResponse struct {
 	CreatedAt            time.Time `gorm:"column:created_at;autoCreateTime"`
 
 	Evaluation Evaluation `gorm:"foreignKey:EvaluationID;references:EvaluationID;constraint:OnDelete:CASCADE"`
+
 }
