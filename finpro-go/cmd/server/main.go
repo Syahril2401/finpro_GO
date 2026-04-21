@@ -14,6 +14,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,6 +23,7 @@ func main() {
 	config.ConnectDatabase()
 
 	// ndelok repo
+	adminRepo := repository.NewAdminRepository(config.DB)
 	userRepo := repository.NewUserRepository(config.DB)
 	assessRepo := repository.NewAssessmentRepository(config.DB)
 	dashRepo := repository.NewDashboardRepository(config.DB)
@@ -31,7 +33,7 @@ func main() {
 	authService := service.NewAuthService(userRepo)
 	assessService := service.NewAssessmentService(assessRepo, aiService)
 	dashService := service.NewDashboardService(dashRepo, assessRepo)
-	adminService := service.NewAdminService(userRepo, assessRepo)
+	adminService := service.NewAdminService(adminRepo, userRepo, assessRepo)
 
 	// ndelok controller
 	authCtrl := controller.NewAuthController(authService)
@@ -42,6 +44,15 @@ func main() {
 
 	// nggenakno ruter
 	r := gin.Default()
+
+	// CORS Middleware
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:8000"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}))
+
 	routes.SetupRoutes(r, authCtrl, assessCtrl, dashCtrl, adminCtrl, testCtrl)
 
 	// nyambung server

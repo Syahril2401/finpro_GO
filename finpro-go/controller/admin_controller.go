@@ -33,3 +33,24 @@ func (ctrl *AdminController) GetEvaluations(c *gin.Context) {
 	}
 	utils.ResponseJSON(c, http.StatusOK, true, "Success", evaluations)
 }
+
+func (ctrl *AdminController) Login(c *gin.Context) {
+	var input struct {
+		Email    string `json:"email" binding:"required,email"`
+		Password string `json:"password" binding:"required"`
+	}
+
+	if err := c.ShouldBindJSON(&input); err != nil {
+		utils.ResponseJSON(c, http.StatusBadRequest, false, err.Error(), nil)
+		return
+	}
+
+	token, err := ctrl.service.Login(input.Email, input.Password)
+	if err != nil {
+		utils.ResponseJSON(c, http.StatusUnauthorized, false, err.Error(), nil)
+		return
+	}
+
+	utils.ResponseJSON(c, http.StatusOK, true, "Login successful", gin.H{"token": token})
+}
+

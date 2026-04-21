@@ -17,7 +17,6 @@ type User struct {
 	Email              string         `gorm:"column:email;type:varchar(150);not null;uniqueIndex;index:idx_users_email"`
 	PasswordHash       string         `gorm:"column:password_hash;type:varchar(255);not null"`
 	Level              *string        `gorm:"column:level;type:varchar(50)"`
-	Profession         *string        `gorm:"column:profession;type:varchar(100)"`
 	GoogleID           *string        `gorm:"column:google_id;type:varchar(100);uniqueIndex"`
 	GoogleAccessToken  *string        `gorm:"column:google_access_token;type:text"`
 	GoogleRefreshToken *string        `gorm:"column:google_refresh_token;type:text"`
@@ -93,9 +92,13 @@ type ResultSummary struct {
 	ResultID       string    `gorm:"column:result_id;type:char(36);primaryKey"`
 	UserID         string    `gorm:"column:user_id;type:char(36);not null;index:idx_result_user"`
 	SessionID      string    `gorm:"column:session_id;type:char(36);not null;index:idx_result_session"`
-	TotalScore     *int      `gorm:"column:total_score"`
-	CategoryResult *string   `gorm:"column:category_result;type:varchar(150)"`
-	CreatedAt      time.Time `gorm:"column:created_at;autoCreateTime"`
+	TotalScore          *int      `gorm:"column:total_score"`
+	PlanningScore       *int      `gorm:"column:planning_score"`
+	TimeManagementScore *int      `gorm:"column:time_management_score"`
+	CognitiveScore      *int      `gorm:"column:cognitive_score"`
+	ReflectionScore     *int      `gorm:"column:reflection_score"`
+	CategoryResult      *string   `gorm:"column:category_result;type:varchar(150)"`
+	CreatedAt           time.Time `gorm:"column:created_at;autoCreateTime"`
 
 	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
 }
@@ -187,7 +190,7 @@ type Target struct {
 }
 
 // =========================
-// NOTES
+// NOTESa
 // =========================
 
 type Note struct {

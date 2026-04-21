@@ -49,9 +49,17 @@ func SetupRoutes(
 		dashboard.Use(middleware.AuthMiddleware())
 		{
 			dashboard.GET("", dashCtrl.GetDashboard)
+			dashboard.GET("/planner", dashCtrl.GetPlanner)
+			dashboard.GET("/notes", dashCtrl.GetNotes)
+			dashboard.GET("/weekly-targets", dashCtrl.GetWeeklyTargets)
+			dashboard.GET("/ai-strategies", dashCtrl.GetAIStrategies)
+			dashboard.GET("/progress", dashCtrl.GetProgress)
+			dashboard.GET("/settings", dashCtrl.GetSettings)
 		}
 
 		// Admin Routes
+		api.POST("/admin/login", adminCtrl.Login)
+
 		admin := api.Group("/admin")
 		admin.Use(middleware.AuthMiddleware(), middleware.AdminMiddleware())
 		{
