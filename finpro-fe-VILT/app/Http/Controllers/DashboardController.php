@@ -13,13 +13,14 @@ class DashboardController extends Controller
     public function index(): Response
     {
         $overview = $this->api->getDashboard();
-        // Last assessment result — prefer session cache, fallback to API
-        $result   = session('onboarding_result')
-            ?: ($overview['data']['last_assessment'] ?? []);
+        $data = $overview['data'] ?? [];
+
+        // Last assessment result — prefer session cache if fresh, fallback to API
+        $result = session('onboarding_result') ?: ($data['last_assessment'] ?? []);
 
         return Inertia::render('Dashboard', [
-            'overview' => $overview['data'] ?? [],
-            'result'   => $result,
+            'dashboard' => $data,
+            'result'    => $result,
         ]);
     }
 }

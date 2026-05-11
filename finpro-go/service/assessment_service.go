@@ -6,6 +6,7 @@ import (
 	"finpro/model"
 	"finpro/repository"
 	"fmt"
+	"log"
 
 	"github.com/google/uuid"
 	"gorm.io/datatypes"
@@ -22,128 +23,66 @@ type assessmentService struct {
 	aiSvc AIService
 }
 
-func NewAssessmentService(repo repository.AssessmentRepository, aiSvc AIService) AssessmentService {
-	return &assessmentService{repo, aiSvc}
+func NewAssessmentService(repo repository.AssessmentRepository, ai AIService) AssessmentService {
+	return &assessmentService{repo: repo, aiSvc: ai}
 }
 
 func (s *assessmentService) GetQuestions() ([]model.Question, error) {
 	return s.repo.GetQuestions()
 }
 
-// HasCompletedAssessment checks if a user already submitted at least one assessment
 func (s *assessmentService) HasCompletedAssessment(userID string) (bool, error) {
-	summary, err := s.repo.GetLastSummary(userID)
-	if err != nil {
-		// record not found = hasn't completed
-		return false, nil
-	}
-	return summary != nil && summary.ResultID != "", nil
-}
-
-// categoryScore maps 1-indexed questions to their dimension category.
-// Questions 1-5  → planning
-// Questions 6-10 → time_management
-// Questions 11-15 → cognitive
-// Questions 16-20 → reflection
-//
-// Since the DB assigns UUIDs we rely on the ordering of answers
-// (the frontend sends them in order Q1–Q20). If a Question's Category
-// field is already populated in the DB we use that instead.
-func scoreByCategory(answers []model.AssessmentInput, questions []model.Question) (planning, timeManagement, cognitive, reflection int) {
-	// Build category lookup by question_id if questions list is provided
-	catMap := map[string]string{}
-	for _, q := range questions {
-		if q.Category != nil {
-			catMap[q.QuestionID] = *q.Category
-		}
-	}
-
-	for i, a := range answers {
-		cat, ok := catMap[a.QuestionID]
-		if !ok {
-			// Fallback: infer by 1-based position in the slice
-			pos := i + 1
-			switch {
-			case pos <= 5:
-				cat = "planning"
-			case pos <= 10:
-				cat = "time_management"
-			case pos <= 15:
-				cat = "cognitive"
-			default:
-				cat = "reflection"
-			}
-		}
-
-		switch cat {
-		case "planning":
-			planning += a.AnswerValue
-		case "time_management":
-			timeManagement += a.AnswerValue
-		case "cognitive":
-			cognitive += a.AnswerValue
-		case "reflection":
-			reflection += a.AnswerValue
-		}
-	}
-	return
-}
-
-func categoryLabel(score int) string {
-	switch {
-	case score <= 12:
-		return "Low"
-	case score <= 18:
-		return "Medium"
-	default:
-		return "High"
-	}
+	return s.repo.HasCompletedAssessment(userID)
 }
 
 func (s *assessmentService) SubmitResponses(ctx context.Context, userID string, answers []model.AssessmentInput) (*model.ResultSummary, error) {
-	sessionID := uuid.New().String()
+	// 1. Calculate scores per category
+	categoryScores := make(map[string]int)
+	var totalScore int
 
-	// 1. Fetch questions for category mapping
-	questions, _ := s.repo.GetQuestions()
-
-	// 2. Build response records
-	var responses []model.AssessmentResponse
-	for _, a := range answers {
-		responses = append(responses, model.AssessmentResponse{
-			ResponseID:  uuid.New().String(),
-			UserID:      userID,
-			QuestionID:  a.QuestionID,
-			AnswerValue: a.AnswerValue,
-			SessionID:   sessionID,
-		})
+	for _, ans := range answers {
+		q, err := s.repo.GetQuestionByID(ans.QuestionID)
+		if err != nil {
+			continue
+		}
+		if q.Category != nil {
+			categoryScores[*q.Category] += ans.AnswerValue
+		}
+		totalScore += ans.AnswerValue
 	}
 
-	// 3. Calculate per-dimension scores
-	planning, timeManagement, cognitive, reflection := scoreByCategory(answers, questions)
-	totalScore := planning + timeManagement + cognitive + reflection
+	// 2. Map dimension scores
+	planning := categoryScores["Planning"]
+	timeManagement := categoryScores["Time Management"]
+	cognitive := categoryScores["Cognitive Strategy"]
+	reflection := categoryScores["Reflection"]
 
-	// 4. Determine overall category
-	overallCategory := fmt.Sprintf(
-		"Planning:%s|TimeManagement:%s|Cognitive:%s|Reflection:%s",
-		categoryLabel(planning),
-		categoryLabel(timeManagement),
-		categoryLabel(cognitive),
-		categoryLabel(reflection),
-	)
+	// 3. Determine category (Low/Medium/High)
+	categoryLabel := func(score int) string {
+		if score <= 10 {
+			return "Low"
+		}
+		if score <= 18 {
+			return "Medium"
+		}
+		return "High"
+	}
 
+	// Helper to convert int to *int
+	intPtr := func(i int) *int { return &i }
+
+	// 4. Create ResultSummary object
 	summary := &model.ResultSummary{
 		ResultID:            uuid.New().String(),
 		UserID:              userID,
-		SessionID:           sessionID,
-		TotalScore:          &totalScore,
-		PlanningScore:       &planning,
-		TimeManagementScore: &timeManagement,
-		CognitiveScore:      &cognitive,
-		ReflectionScore:     &reflection,
-		CategoryResult:      &overallCategory,
+		TotalScore:          intPtr(totalScore),
+		PlanningScore:       intPtr(planning),
+		TimeManagementScore: intPtr(timeManagement),
+		CognitiveScore:      intPtr(cognitive),
+		ReflectionScore:     intPtr(reflection),
 	}
 
-	// 5. Build structured Gemini prompt using per-dimension categories
+	// 5. Build structured Gemini prompt matching frontend Result.vue expectations
 	geminiPrompt := fmt.Sprintf(`
 User learning profile from Self-Regulated Learning (SRL) assessment:
 
@@ -153,24 +92,36 @@ Cognitive Strategy: %s (Score: %d/25)
 Reflection:       %s (Score: %d/25)
 Total Score:      %d/100
 
-Based on this SRL profile, generate a JSON response with the following structure:
+Generate a JSON response for a university student study profile. 
+Return ONLY valid JSON. No markdown, no extra text.
+
+Structure:
 {
-  "profile_title": "short motivational title (e.g., The Focused Achiever)",
-  "learning_analysis": "2-3 sentences analyzing the student's overall learning pattern",
-  "strengths": ["strength 1", "strength 2", "strength 3"],
-  "weaknesses": ["area for improvement 1", "area for improvement 2"],
-  "recommendations": [
-    "specific actionable recommendation 1",
-    "specific actionable recommendation 2",
-    "specific actionable recommendation 3",
-    "specific actionable recommendation 4",
-    "specific actionable recommendation 5"
+  "profile_title": "string (motivational, e.g., The Strategic Visionary)",
+  "deep_work_capacity": number (0-100),
+  "cognitive_style": "string (e.g., Analytical & Pattern-Oriented)",
+  "consistency_score": number (0-100),
+  "retention_score": number (0-100),
+  "strengths": [
+    { "title": "string", "desc": "short description", "icon": "SVG_PATH" }
   ],
-  "strategy_tags": ["Pomodoro", "Spaced Repetition", "etc"]
+  "weaknesses": [
+    { "title": "string", "desc": "short description" }
+  ],
+  "areas_for_growth": [
+    { "title": "string", "desc": "short description" }
+  ],
+  "ai_strategy": {
+    "title": "string (the primary recommendation name)",
+    "desc": "short description (2-3 sentences)"
+  },
+  "recommendations": [
+    { "title": "string", "desc": "short description" }
+  ]
 }
 
-Make the response concise, motivational, and practical for a university student.
-Return ONLY valid JSON, no markdown, no explanation.
+Items count: 2 strengths, 2 weaknesses, 2 areas_for_growth, 1 ai_strategy, 2 recommendations.
+Icons: Use standard Heroicons SVG paths (starting with M).
 `,
 		categoryLabel(planning), planning,
 		categoryLabel(timeManagement), timeManagement,
@@ -180,23 +131,40 @@ Return ONLY valid JSON, no markdown, no explanation.
 	)
 
 	// 6. Call Gemini API
+	log.Printf("[AI] Analyzing for user %s...\n", userID)
 	aiResponse, err := s.aiSvc.AnalyzeLearningStyle(ctx, geminiPrompt)
-	if err != nil {
-		// Fallback if Gemini fails
+	
+	if err != nil || !json.Valid([]byte(aiResponse)) {
+		errDesc := "Unknown Error"
+		if err != nil {
+			errDesc = err.Error()
+		}
+		log.Printf("[AI] Using fallback for user %s. Reason: %s", userID, errDesc)
+
+		// Sanitize error message for JSON
+		safeErr, _ := json.Marshal(errDesc)
+		
 		aiResponse = fmt.Sprintf(`{
-			"profile_title": "The Growing Learner",
-			"learning_analysis": "You are developing your self-regulated learning skills. Focus on building consistent habits.",
-			"strengths": ["Willingness to learn", "Openness to improvement"],
-			"weaknesses": ["Consistency in planning", "Self-reflection habits"],
-			"recommendations": [
-				"Create a fixed weekly study schedule",
-				"Use the Pomodoro technique for focused sessions",
-				"Review your notes after each study session",
-				"Break large tasks into smaller daily goals",
-				"Track your progress weekly"
+			"profile_title": "AI Offline Mode",
+			"deep_work_capacity": 92,
+			"cognitive_style": "Error Mode",
+			"consistency_score": 64,
+			"retention_score": 88,
+			"strengths": [
+				{ "title": "AI Connection Issue", "desc": %s, "icon": "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" }
 			],
-			"strategy_tags": ["Time Blocking", "Pomodoro", "Active Recall"]
-		}`)
+			"weaknesses": [],
+			"areas_for_growth": [
+				{ "title": "API Verification", "desc": "The system could not reach Gemini. Please check your internet or API key." }
+			],
+			"ai_strategy": {
+				"title": "System Alert",
+				"desc": "Analysis is temporarily unavailable. Using standard profile."
+			},
+			"recommendations": []
+		}`, string(safeErr))
+	} else {
+		log.Printf("[AI] SUCCESS: Analysis generated for user %s\n", userID)
 	}
 
 	// 7. Store AI response as category_result JSON
@@ -211,10 +179,18 @@ Return ONLY valid JSON, no markdown, no explanation.
 	}
 
 	// 9. Persist everything in a transaction
-	answersJSON, _ := json.Marshal(answers)
-	_ = answersJSON
+	var responses []model.AssessmentResponse
+	for _, ans := range answers {
+		responses = append(responses, model.AssessmentResponse{
+			ResponseID:  uuid.New().String(),
+			UserID:      userID,
+			QuestionID:  ans.QuestionID,
+			AnswerValue: ans.AnswerValue,
+		})
+	}
 
 	if err := s.repo.SubmitResponses(responses, summary, aiLog); err != nil {
+		log.Printf("[DB] Failed to save assessment for user %s: %v", userID, err)
 		return nil, err
 	}
 

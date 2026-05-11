@@ -39,7 +39,7 @@ class OnboardingController extends Controller
 
     // ─── Step 3: Submit answers → Go API ─────────────────────────────────────
 
-    public function submit(Request $request): \Illuminate\Http\JsonResponse
+    public function submit(Request $request): \Symfony\Component\HttpFoundation\Response
     {
         $validated = $request->validate([
             'answers'                => ['required', 'array', 'min:1'],
@@ -52,21 +52,11 @@ class OnboardingController extends Controller
 
             // Cache result in session for the Result page
             Session::put('onboarding_result', $result['data'] ?? []);
-
-            // Mark survey as completed so the SurveyCompleted middleware
-            // lets this user through to the dashboard without another API call.
             Session::put('survey_completed', true);
 
-            return response()->json([
-                'success' => true,
-                'data'    => $result['data'] ?? [],
-            ]);
+            return to_route('onboarding.result');
         } catch (\Throwable $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage(),
-                'data'    => [],
-            ], 500);
+            return back()->withErrors(['error' => 'Analysis failed: ' . $e->getMessage()]);
         }
     }
 

@@ -18,17 +18,26 @@ type AIService interface {
 
 type aiService struct {
 	apiKey string
+	model  string
 }
 
 func NewAIService() AIService {
 	key := os.Getenv("GEMINI_API_KEY")
+	modelName := os.Getenv("GEMINI_MODEL")
+	if modelName == "" {
+		modelName = "gemini-1.5-flash" // Default safe model
+	}
+
 	if key == "" {
 		log.Println("[AI] WARNING: GEMINI_API_KEY is empty!")
 	} else {
 		log.Printf("[AI] Gemini API Key detected (prefix: %s...)", key[:5])
+		log.Printf("[AI] Using model: %s", modelName)
 	}
+
 	return &aiService{
 		apiKey: key,
+		model:  modelName,
 	}
 }
 
@@ -40,24 +49,18 @@ func (s *aiService) AnalyzeLearningStyle(ctx context.Context, prompt string) (st
 	}
 	defer client.Close()
 
-	// Coba gemini-1.5-flash dulu
-	model := client.GenerativeModel("gemini-1.5-flash")
+	// Use configured model from .env
+	model := client.GenerativeModel(s.model)
 	model.SetTemperature(0.7)
 
 	resp, err := model.GenerateContent(ctx, genai.Text(prompt))
 	if err != nil {
-		log.Printf("[AI] Flash failed: %v. Trying gemini-pro...", err)
-		// Fallback ke gemini-pro (lebih stabil di versi API lama)
-		model = client.GenerativeModel("gemini-pro")
-		resp, err = model.GenerateContent(ctx, genai.Text(prompt))
-		if err != nil {
-			log.Printf("[AI] All models failed: %v", err)
-			return "", err
-		}
-		log.Println("[AI] Success using gemini-pro")
+		log.Printf("[AI] Model %s failed: %v", s.model, err)
+		return "", err
 	}
 
 	if len(resp.Candidates) == 0 || len(resp.Candidates[0].Content.Parts) == 0 {
+		log.Printf("[AI] ERROR: Empty response candidates from Gemini")
 		return "", fmt.Errorf("no response from Gemini")
 	}
 
@@ -67,12 +70,18 @@ func (s *aiService) AnalyzeLearningStyle(ctx context.Context, prompt string) (st
 	}
 
 	raw = strings.TrimSpace(raw)
-	raw = strings.TrimPrefix(raw, "```json")
-	raw = strings.TrimPrefix(raw, "```")
-	raw = strings.TrimSuffix(raw, "```")
-	raw = strings.TrimSpace(raw)
+	
+	// Robust JSON extraction
+	start := strings.Index(raw, "{")
+	end := strings.LastIndex(raw, "}")
+	
+	if start == -1 || end == -1 || end < start {
+		log.Printf("[AI] ERROR: Failed to find JSON boundaries in response: %s", raw)
+		return raw, nil 
+	}
 
-	return raw, nil
+	cleaned := raw[start : end+1]
+	return cleaned, nil
 }
 
 func (s *aiService) Chat(ctx context.Context, userMessage string, learningProfile string) (string, error) {
@@ -83,8 +92,7 @@ func (s *aiService) Chat(ctx context.Context, userMessage string, learningProfil
 	}
 	defer client.Close()
 
-	// Coba gemini-1.5-flash
-	model := client.GenerativeModel("gemini-1.5-flash")
+	model := client.GenerativeModel(s.model)
 	model.SetTemperature(0.8)
 
 	systemContext := fmt.Sprintf(`
@@ -106,15 +114,8 @@ Guidelines:
 
 	resp, err := model.GenerateContent(ctx, genai.Text(fullPrompt))
 	if err != nil {
-		log.Printf("[AI Chat] Flash failed: %v. Trying gemini-pro...", err)
-		// Fallback ke gemini-pro
-		model = client.GenerativeModel("gemini-pro")
-		resp, err = model.GenerateContent(ctx, genai.Text(fullPrompt))
-		if err != nil {
-			log.Printf("[AI Chat] All models failed: %v", err)
-			return "", err
-		}
-		log.Println("[AI Chat] Success using gemini-pro")
+		log.Printf("[AI Chat] Model %s failed: %v", s.model, err)
+		return "", err
 	}
 
 	if len(resp.Candidates) == 0 {

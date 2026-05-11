@@ -32,7 +32,7 @@ func main() {
 	aiService := service.NewAIService()
 	authService := service.NewAuthService(userRepo)
 	assessService := service.NewAssessmentService(assessRepo, aiService)
-	dashService := service.NewDashboardService(dashRepo, assessRepo)
+	dashService := service.NewDashboardService(dashRepo, assessRepo, userRepo)
 	adminService := service.NewAdminService(adminRepo, userRepo, assessRepo)
 
 	// ndelok controller

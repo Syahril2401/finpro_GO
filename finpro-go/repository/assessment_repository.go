@@ -8,8 +8,10 @@ import (
 
 type AssessmentRepository interface {
 	GetQuestions() ([]model.Question, error)
+	GetQuestionByID(id string) (model.Question, error)
 	SubmitResponses(responses []model.AssessmentResponse, summary *model.ResultSummary, log *model.AILog) error
 	GetLastSummary(userID string) (*model.ResultSummary, error)
+	HasCompletedAssessment(userID string) (bool, error)
 	GetAllEvaluations() ([]model.Evaluation, error)
 }
 
@@ -49,6 +51,18 @@ func (r *assessmentRepository) GetLastSummary(userID string) (*model.ResultSumma
 	var summary model.ResultSummary
 	err := r.db.Where("user_id = ?", userID).Order("created_at desc").First(&summary).Error
 	return &summary, err
+}
+
+func (r *assessmentRepository) GetQuestionByID(id string) (model.Question, error) {
+	var q model.Question
+	err := r.db.Where("question_id = ?", id).First(&q).Error
+	return q, err
+}
+
+func (r *assessmentRepository) HasCompletedAssessment(userID string) (bool, error) {
+	var count int64
+	err := r.db.Model(&model.ResultSummary{}).Where("user_id = ?", userID).Count(&count).Error
+	return count > 0, err
 }
 
 func (r *assessmentRepository) GetAllEvaluations() ([]model.Evaluation, error) {

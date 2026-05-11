@@ -1,360 +1,302 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50 flex flex-col items-center justify-center px-4 py-10">
-    <!-- BG blobs -->
-    <div class="fixed top-0 right-0 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
-    <div class="fixed bottom-0 left-0 w-80 h-80 bg-violet-100 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+  <div class="min-h-screen bg-[#F8F9FE] font-sans text-slate-900 pb-20">
+    <!-- Navbar -->
+    <nav class="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100 h-16 flex items-center justify-between px-8">
+      <span class="text-xl font-black text-[#3D3ACE] tracking-tight">Lumora</span>
+      <button class="text-sm font-bold text-slate-500 hover:text-slate-900 transition-colors">Save & Exit</button>
+    </nav>
 
-    <div class="relative z-10 w-full max-w-2xl">
-      <!-- Top bar -->
-      <div class="flex items-center justify-between mb-6">
-        <Link :href="route('onboarding.sanctuary')" class="flex items-center gap-1.5 text-sm text-slate-500 hover:text-indigo-600 transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-          Kembali
-        </Link>
-        <span class="text-xs font-bold text-indigo-600">{{ answeredCount }} / 20 dijawab</span>
-      </div>
-
-      <!-- Overall progress bar -->
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 mb-6">
-        <div class="flex items-center justify-between mb-2">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Progress Keseluruhan</p>
-          <p class="text-xs font-bold text-indigo-600">{{ Math.round((answeredCount / 20) * 100) }}%</p>
-        </div>
-        <div class="h-2.5 bg-slate-100 rounded-full overflow-hidden">
-          <div class="h-full bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full transition-all duration-500 ease-out"
-            :style="{ width: (answeredCount / 20 * 100) + '%' }"></div>
-        </div>
-        <!-- Segment dots -->
-        <div class="flex justify-between mt-3">
-          <div v-for="(seg, i) in segments" :key="i"
-            class="flex items-center gap-1.5 text-xs"
-            :class="currentSegment === i ? 'text-indigo-700 font-bold' : isSegmentDone(i) ? 'text-emerald-600 font-semibold' : 'text-slate-400'">
-            <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px]"
-              :class="isSegmentDone(i) ? 'bg-emerald-100' : currentSegment === i ? 'bg-indigo-100' : 'bg-slate-100'">
-              {{ isSegmentDone(i) ? '✓' : seg.icon }}
-            </span>
-            <span class="hidden sm:inline">{{ seg.shortTitle }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Segment card -->
-      <Transition name="slide" mode="out-in">
-        <div :key="currentSegment" class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-          <!-- Segment header -->
-          <div class="px-8 py-6 border-b border-slate-50"
-            :style="{ background: segments[currentSegment].gradient }">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shadow-sm"
-                :class="segments[currentSegment].iconBg">
-                {{ segments[currentSegment].icon }}
-              </div>
-              <div>
-                <p class="text-xs font-bold uppercase tracking-widest"
-                  :class="segments[currentSegment].labelColor">
-                  Segmen {{ currentSegment + 1 }} dari 4
-                </p>
-                <h2 class="text-lg font-extrabold text-slate-900">{{ segments[currentSegment].title }}</h2>
-                <p class="text-xs text-slate-500 mt-0.5">{{ segments[currentSegment].subtitle }}</p>
-              </div>
+    <div class="max-w-[1200px] mx-auto pt-32 px-6 flex flex-col lg:flex-row gap-12">
+      <!-- Main Content -->
+      <div class="flex-1">
+        <!-- Progress Stepper -->
+        <div class="mb-16">
+            <p class="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2">Progress</p>
+            <h2 class="text-lg font-bold text-[#3D3ACE] mb-8">Step 0{{ currentSegmentIndex + 1 }}: {{ currentSegment.title }}</h2>
+            
+            <div class="relative">
+                <div class="absolute top-1/2 left-0 w-full h-[2px] bg-slate-200 -translate-y-1/2"></div>
+                <div class="absolute top-1/2 left-0 h-[2px] bg-[#3D3ACE] -translate-y-1/2 transition-all duration-500" 
+                    :style="{ width: (currentSegmentIndex / (segments.length - 1) * 100) + '%' }"></div>
+                
+                <div class="relative flex justify-between">
+                    <div v-for="(seg, i) in segments" :key="i" class="flex flex-col items-center">
+                        <div class="w-4 h-4 rounded-full border-2 transition-all duration-500 z-10"
+                            :class="i <= currentSegmentIndex ? 'bg-[#3D3ACE] border-[#3D3ACE]' : 'bg-white border-slate-300'">
+                        </div>
+                        <span class="absolute mt-6 text-[10px] font-bold uppercase tracking-widest text-slate-400 whitespace-nowrap"
+                            :class="{ 'text-[#3D3ACE]': i === currentSegmentIndex }">
+                            {{ seg.shortTitle }}
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
 
-          <!-- Questions -->
-          <div class="px-6 py-6 space-y-6">
-            <div v-for="(q, qi) in segments[currentSegment].questions" :key="q.id"
-              class="rounded-2xl border-2 p-5 transition-all duration-200"
-              :class="answers[q.id] ? 'border-indigo-200 bg-indigo-50/40' : 'border-slate-100 bg-white'">
-              <p class="text-sm font-semibold text-slate-800 mb-4">
-                <span class="inline-block w-6 h-6 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-lg text-center leading-6 mr-2">
-                  {{ q.number }}
-                </span>
-                {{ q.text }}
+        <!-- Question Title -->
+        <Transition name="fade" mode="out-in">
+          <div :key="currentQuestion.id" class="text-center mb-12 min-h-[140px]">
+              <h1 class="text-[28px] md:text-[32px] font-extrabold text-[#1E1B4B] leading-tight mb-4 px-4">
+                  {{ currentQuestion.text }}
+              </h1>
+              <p class="text-slate-500 font-medium max-w-xl mx-auto">
+                  Understanding your rhythm helps us tailor the sanctuary to your natural productivity flow.
               </p>
-
-              <!-- Likert scale -->
-              <div class="grid grid-cols-5 gap-2">
-                <button
-                  v-for="val in 5"
-                  :key="val"
-                  :id="`q${q.number}-v${val}`"
-                  @click="setAnswer(q.id, val)"
-                  class="flex flex-col items-center gap-1 py-2.5 px-1 rounded-xl border-2 transition-all duration-150 hover:scale-105 active:scale-95"
-                  :class="answers[q.id] === val
-                    ? `border-${segments[currentSegment].activeColor} bg-${segments[currentSegment].activeBg} scale-105 shadow-md`
-                    : 'border-slate-200 hover:border-slate-300 bg-white'">
-                  <span class="font-black text-base"
-                    :class="answers[q.id] === val ? segments[currentSegment].activeTextClass : 'text-slate-600'">
-                    {{ val }}
-                  </span>
-                  <span class="text-[9px] text-center leading-tight"
-                    :class="answers[q.id] === val ? segments[currentSegment].activeTextClass : 'text-slate-400'">
-                    {{ likertLabels[val - 1] }}
-                  </span>
-                </button>
-              </div>
-            </div>
           </div>
+        </Transition>
 
-          <!-- Navigation -->
-          <div class="px-6 pb-6 flex justify-between items-center gap-3">
-            <button
-              v-if="currentSegment > 0"
-              @click="currentSegment--"
-              class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors px-4 py-2.5 rounded-xl border border-slate-200 hover:border-indigo-200">
-              ← Segmen sebelumnya
+        <!-- Options Grid -->
+        <div class="space-y-4 max-w-xl mx-auto">
+            <button v-for="(opt, idx) in likertOptions" :key="idx"
+                @click="setAnswer(currentQuestion.id, opt.value)"
+                class="w-full flex items-center gap-6 p-5 rounded-[24px] bg-white border-2 transition-all duration-300 group"
+                :class="answers[currentQuestion.id] === opt.value ? 'border-[#3D3ACE] shadow-xl shadow-indigo-50' : 'border-transparent hover:border-slate-200'">
+                
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:scale-110"
+                    :class="answers[currentQuestion.id] === opt.value ? 'bg-[#3D3ACE] text-white' : 'bg-slate-50 text-slate-400'">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="opt.iconPath" />
+                    </svg>
+                </div>
+
+                <div class="text-left flex-1">
+                    <h3 class="text-lg font-bold transition-colors" :class="answers[currentQuestion.id] === opt.value ? 'text-[#3D3ACE]' : 'text-slate-900'">
+                        {{ opt.title }}
+                    </h3>
+                    <p class="text-sm font-medium text-slate-400">{{ opt.desc }}</p>
+                </div>
+
+                <div v-if="answers[currentQuestion.id] === opt.value" class="w-6 h-6 bg-[#3D3ACE] rounded-full flex items-center justify-center text-white">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-20 flex items-center justify-between max-w-xl mx-auto">
+            <button @click="prevQuestion" v-if="!isFirstQuestion" class="flex items-center gap-2 text-slate-400 font-bold hover:text-slate-900 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7 7-7"/></svg>
+                Previous Question
             </button>
             <div v-else></div>
 
-            <button
-              @click="nextSegment"
-              :disabled="!isSegmentComplete || submitting"
-              id="questionnaire-next-btn"
-              class="flex items-center gap-2 font-bold py-3 px-6 rounded-2xl transition-all shadow-lg"
-              :class="isSegmentComplete
-                ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-indigo-200 hover:-translate-y-0.5'
-                : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'">
-              <span v-if="submitting" class="flex items-center gap-2">
-                <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
-                </svg>
-                Menganalisis...
-              </span>
-              <span v-else-if="currentSegment < 3">
-                Segmen Berikutnya →
-              </span>
-              <span v-else>
-                Lihat Hasilku 🎯
-              </span>
+            <button @click="handleNext"
+                :disabled="!answers[currentQuestion.id] || submitting"
+                class="bg-[#3D3ACE] hover:bg-[#322fb0] disabled:bg-slate-200 disabled:cursor-not-allowed text-white font-bold px-12 py-5 rounded-[20px] shadow-xl shadow-indigo-100 transition-all active:scale-[0.98]">
+                {{ isLastQuestionInAll ? (submitting ? 'Analyzing...' : 'View Results') : 'Continue' }}
             </button>
-          </div>
-
-          <!-- Segment progress pills -->
-          <div class="px-6 pb-5 flex justify-center gap-2">
-            <div v-for="(seg, i) in segments" :key="i"
-              class="h-1.5 rounded-full transition-all duration-300"
-              :class="[
-                i === currentSegment ? 'w-8 bg-indigo-500' :
-                isSegmentDone(i) ? 'w-5 bg-emerald-400' :
-                'w-4 bg-slate-200'
-              ]"></div>
-          </div>
         </div>
-      </Transition>
+      </div>
 
-      <!-- Reminder -->
-      <p class="text-center text-xs text-slate-400 mt-5">
-        Jawablah sejujurnya — tidak ada jawaban yang benar atau salah ✨
-      </p>
+      <!-- Sidebar -->
+      <div class="w-full lg:w-[320px] space-y-8">
+        <div class="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm relative overflow-hidden group">
+            <div class="w-12 h-12 bg-indigo-50 text-[#3D3ACE] rounded-2xl flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0012 18.75c-1.03 0-1.9-.4-2.593-1.012l-.547-.547z" /></svg>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#1E1B4B] mb-3">Reflective Learning</h3>
+            <p class="text-slate-500 text-[14px] leading-relaxed font-medium">
+                Taking a moment to reflect on your habits is the first step toward a more focused academic life. We use these insights to calibrate your Lumora study cycles.
+            </p>
+            <div class="absolute top-[-20px] right-[-20px] w-24 h-24 bg-indigo-50 rounded-full blur-2xl group-hover:bg-indigo-100 transition-colors"></div>
+        </div>
+
+        <div class="rounded-[32px] overflow-hidden shadow-2xl shadow-indigo-50 rotate-2">
+            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=300&h=400" alt="Reflection" class="w-full h-[280px] object-cover">
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
-import { Link, router } from '@inertiajs/vue3'
+import { router } from '@inertiajs/vue3'
 import axios from 'axios'
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+// ─── Data & Logic ────────────────────────────────────────────────────────────
 
 const props = defineProps({
-  questions: { type: Array, default: () => [] },
+  questions: { type: Array, default: () => [] }
 })
 
-const currentSegment = ref(0)
-const answers        = ref({})
-const submitting     = ref(false)
+const currentSegmentIndex = ref(0)
+const currentQuestionIndex = ref(0)
+const answers = ref({})
+const submitting = ref(false)
 
-// Hardcoded 20 questions by segment (matches Go backend questions by category)
+// Segments matching DB categories
 const segments = [
-  {
-    icon: '🟡',
-    iconBg: 'bg-yellow-50',
-    shortTitle: 'Planning',
-    title: 'Planning Score',
-    subtitle: 'Seberapa baik kamu merencanakan belajarmu?',
-    gradient: 'linear-gradient(135deg, #fefce8 0%, #fef9c3 100%)',
-    labelColor: 'text-yellow-700',
-    activeColor: 'yellow-400',
-    activeBg: 'yellow-50',
-    activeTextClass: 'text-yellow-700',
-    questions: [
-      { id: '11111111-0001-0001-0001-000000000001', number: 1,  text: 'Saya membuat jadwal belajar sebelum mulai belajar' },
-      { id: '11111111-0001-0001-0001-000000000002', number: 2,  text: 'Saya menetapkan target belajar yang jelas' },
-      { id: '11111111-0001-0001-0001-000000000003', number: 3,  text: 'Saya merencanakan materi yang akan dipelajari' },
-      { id: '11111111-0001-0001-0001-000000000004', number: 4,  text: 'Saya menentukan waktu belajar secara rutin' },
-      { id: '11111111-0001-0001-0001-000000000005', number: 5,  text: 'Saya mempersiapkan kebutuhan belajar sebelum mulai' },
-    ],
-  },
-  {
-    icon: '🟢',
-    iconBg: 'bg-emerald-50',
-    shortTitle: 'Time Mgmt',
-    title: 'Time Management Score',
-    subtitle: 'Seberapa efektif kamu mengelola waktu belajarmu?',
-    gradient: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
-    labelColor: 'text-emerald-700',
-    activeColor: 'emerald-500',
-    activeBg: 'emerald-50',
-    activeTextClass: 'text-emerald-700',
-    questions: [
-      { id: '11111111-0001-0001-0002-000000000006', number: 6,  text: 'Saya mengatur waktu belajar dengan baik' },
-      { id: '11111111-0001-0001-0002-000000000007', number: 7,  text: 'Saya menyelesaikan tugas tepat waktu' },
-      { id: '11111111-0001-0001-0002-000000000008', number: 8,  text: 'Saya jarang menunda pekerjaan' },
-      { id: '11111111-0001-0001-0002-000000000009', number: 9,  text: 'Saya memprioritaskan tugas yang penting' },
-      { id: '11111111-0001-0001-0002-000000000010', number: 10, text: 'Saya konsisten dengan jadwal belajar saya' },
-    ],
-  },
-  {
-    icon: '🔵',
-    iconBg: 'bg-blue-50',
-    shortTitle: 'Cognitive',
-    title: 'Cognitive Score',
-    subtitle: 'Seberapa baik strategi belajar (cara berpikirmu)?',
-    gradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
-    labelColor: 'text-blue-700',
-    activeColor: 'blue-500',
-    activeBg: 'blue-50',
-    activeTextClass: 'text-blue-700',
-    questions: [
-      { id: '11111111-0001-0001-0003-000000000011', number: 11, text: 'Saya menggunakan metode belajar tertentu (mencatat, merangkum, dll)' },
-      { id: '11111111-0001-0001-0003-000000000012', number: 12, text: 'Saya mencoba berbagai cara belajar untuk menemukan yang efektif' },
-      { id: '11111111-0001-0001-0003-000000000013', number: 13, text: 'Saya memahami materi, bukan hanya menghafal' },
-      { id: '11111111-0001-0001-0003-000000000014', number: 14, text: 'Saya mengulang materi untuk memperkuat pemahaman' },
-      { id: '11111111-0001-0001-0003-000000000015', number: 15, text: 'Saya menghubungkan materi dengan pengetahuan sebelumnya' },
-    ],
-  },
-  {
-    icon: '🔴',
-    iconBg: 'bg-red-50',
-    shortTitle: 'Reflection',
-    title: 'Reflection Score',
-    subtitle: 'Seberapa sering kamu mengevaluasi diri sendiri?',
-    gradient: 'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)',
-    labelColor: 'text-red-600',
-    activeColor: 'red-400',
-    activeBg: 'red-50',
-    activeTextClass: 'text-red-600',
-    questions: [
-      { id: '11111111-0001-0001-0004-000000000016', number: 16, text: 'Saya mengecek apakah saya memahami materi' },
-      { id: '11111111-0001-0001-0004-000000000017', number: 17, text: 'Saya menyadari ketika saya tidak memahami sesuatu' },
-      { id: '11111111-0001-0001-0004-000000000018', number: 18, text: 'Saya mengevaluasi cara belajar saya' },
-      { id: '11111111-0001-0001-0004-000000000019', number: 19, text: 'Saya memperbaiki strategi belajar jika kurang efektif' },
-      { id: '11111111-0001-0001-0004-000000000020', number: 20, text: 'Saya belajar dari kesalahan sebelumnya' },
-    ],
-  },
+    { id: 'planning', shortTitle: 'Planning', title: 'Planning Habits' },
+    { id: 'time_management', shortTitle: 'Time Mgmt', title: 'Time Management' },
+    { id: 'cognitive', shortTitle: 'Cognitive', title: 'Cognitive Strategies' },
+    { id: 'reflection', shortTitle: 'Reflection', title: 'Self-Reflection' },
 ]
 
-const likertLabels = [
-  'Sangat\nTidak Setuju',
-  'Tidak\nSetuju',
-  'Netral',
-  'Setuju',
-  'Sangat\nSetuju',
+// Exact 20 questions from database image
+const allQuestions = [
+    // Planning
+    { id: '11111111-0001-0001-0001-000000000001', segId: 'planning', text: 'Saya membuat jadwal belajar sebelum mulai belajar' },
+    { id: '11111111-0001-0001-0001-000000000002', segId: 'planning', text: 'Saya menetapkan target belajar yang jelas' },
+    { id: '11111111-0001-0001-0001-000000000003', segId: 'planning', text: 'Saya merencanakan materi yang akan dipelajari' },
+    { id: '11111111-0001-0001-0001-000000000004', segId: 'planning', text: 'Saya menentukan waktu belajar secara rutin' },
+    { id: '11111111-0001-0001-0001-000000000005', segId: 'planning', text: 'Saya mempersiapkan kebutuhan belajar sebelum mulai' },
+    
+    // Time Management
+    { id: '11111111-0001-0001-0002-000000000006', segId: 'time_management', text: 'Saya mengatur waktu belajar dengan baik' },
+    { id: '11111111-0001-0001-0002-000000000007', segId: 'time_management', text: 'Saya menyelesaikan tugas tepat waktu' },
+    { id: '11111111-0001-0001-0002-000000000008', segId: 'time_management', text: 'Saya jarang menunda pekerjaan' },
+    { id: '11111111-0001-0001-0002-000000000009', segId: 'time_management', text: 'Saya memprioritaskan tugas yang penting' },
+    { id: '11111111-0001-0001-0002-000000000010', segId: 'time_management', text: 'Saya konsisten dengan jadwal belajar saya' },
+    
+    // Cognitive
+    { id: '11111111-0001-0001-0003-000000000011', segId: 'cognitive', text: 'Saya menggunakan metode belajar tertentu (mencatat, merangkum, dll)' },
+    { id: '11111111-0001-0001-0003-000000000012', segId: 'cognitive', text: 'Saya mencoba berbagai cara belajar untuk menemukan yang efektif' },
+    { id: '11111111-0001-0001-0003-000000000013', segId: 'cognitive', text: 'Saya memahami materi, bukan hanya menghafal' },
+    { id: '11111111-0001-0001-0003-000000000014', segId: 'cognitive', text: 'Saya mengulang materi untuk memperkuat pemahaman' },
+    { id: '11111111-0001-0001-0003-000000000015', segId: 'cognitive', text: 'Saya menghubungkan materi dengan pengetahuan sebelumnya' },
+    
+    // Reflection
+    { id: '11111111-0001-0001-0004-000000000016', segId: 'reflection', text: 'Saya mengecek apakah saya memahami materi' },
+    { id: '11111111-0001-0001-0004-000000000017', segId: 'reflection', text: 'Saya menyadari ketika saya tidak memahami sesuatu' },
+    { id: '11111111-0001-0001-0004-000000000018', segId: 'reflection', text: 'Saya mengevaluasi cara belajar saya' },
+    { id: '11111111-0001-0001-0004-000000000019', segId: 'reflection', text: 'Saya memperbaiki strategi belajar jika kurang efektif' },
+    { id: '11111111-0001-0001-0004-000000000020', segId: 'reflection', text: 'Saya belajar dari kesalahan sebelumnya' },
 ]
+
+const likertOptions = [
+    { value: 1, title: 'Never', desc: 'Sangat Tidak Setuju / Tidak Pernah', iconPath: 'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636' },
+    { value: 2, title: 'Rarely', desc: 'Tidak Setuju / Jarang', iconPath: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
+    { value: 3, title: 'Sometimes', desc: 'Netral / Kadang-kadang', iconPath: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+    { value: 4, title: 'Often', desc: 'Setuju / Sering', iconPath: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
+    { value: 5, title: 'Always', desc: 'Sangat Setuju / Selalu', iconPath: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z' },
+]
+
+// ─── Computed ─────────────────────────────────────────────────────────────
+
+const currentSegment = computed(() => segments[currentSegmentIndex.value] || segments[0])
+
+const currentSegmentQuestions = computed(() => {
+    return allQuestions.filter(q => q.segId === currentSegment.value.id)
+})
+
+const currentQuestion = computed(() => {
+    return currentSegmentQuestions.value[currentQuestionIndex.value] || { text: 'Loading...', id: 'loading' }
+})
+
+const isFirstQuestion = computed(() => {
+    return currentSegmentIndex.value === 0 && currentQuestionIndex.value === 0
+})
+
+const isLastQuestionInSegment = computed(() => {
+    return currentQuestionIndex.value === currentSegmentQuestions.value.length - 1
+})
+
+const isLastQuestionInAll = computed(() => {
+    return currentSegmentIndex.value === segments.length - 1 && isLastQuestionInSegment.value
+})
+
+// ─── Methods ───────────────────────────────────────────────────────────────
+
+function setAnswer(questionId, value) {
+    if (questionId === 'loading') return
+    answers.value[questionId] = value
+}
+
+function handleNext() {
+    if (!answers.value[currentQuestion.value.id]) return
+
+    if (isLastQuestionInSegment.value) {
+        if (currentSegmentIndex.value < segments.length - 1) {
+            currentSegmentIndex.value++
+            currentQuestionIndex.value = 0
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        } else {
+            submitAll()
+        }
+    } else {
+        currentQuestionIndex.value++
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestionIndex.value > 0) {
+        currentQuestionIndex.value--
+    } else if (currentSegmentIndex.value > 0) {
+        currentSegmentIndex.value--
+        // Go to last question of previous segment
+        const prevSegId = segments[currentSegmentIndex.value].id
+        currentQuestionIndex.value = allQuestions.filter(q => q.segId === prevSegId).length - 1
+    }
+}
+
+async function submitAll() {
+    submitting.value = true
+    try {
+        const payload = Object.keys(answers.value).map(id => ({
+            question_id: id,
+            answer_value: answers.value[id]
+        }))
+
+        router.post(route('onboarding.submit'), {
+            answers: payload
+        }, {
+            onStart: () => { submitting.value = true },
+            onFinish: () => { submitting.value = false },
+            onSuccess: (page) => {
+                // Cache the result for other components like Dashboard
+                // page.props.result should be updated by the redirect to result page
+                if (page.props.result) {
+                    sessionStorage.setItem('lumora_result', JSON.stringify(page.props.result))
+                }
+                localStorage.removeItem('lumora_survey_progress')
+            },
+            onError: (errors) => {
+                console.error('Submit error:', errors)
+            }
+        })
+    } catch (err) {
+        console.error('Unexpected error:', err)
+    }
+}
+
+// ─── Persistence ───────────────────────────────────────────────────────────
 
 const STORAGE_KEY = 'lumora_survey_progress'
 
-// ─── Computed ─────────────────────────────────────────────────────────────────
+function saveProgress() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        answers: answers.value,
+        segIdx: currentSegmentIndex.value,
+        qIdx: currentQuestionIndex.value
+    }))
+}
 
-const answeredCount = computed(() =>
-  segments.flatMap(s => s.questions).filter(q => answers.value[q.id]).length
-)
-
-const isSegmentComplete = computed(() => {
-  return segments[currentSegment.value].questions.every(q => answers.value[q.id])
+onMounted(() => {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+        try {
+            const parsed = JSON.parse(saved)
+            answers.value = parsed.answers || {}
+            currentSegmentIndex.value = parsed.segIdx || 0
+            currentQuestionIndex.value = parsed.qIdx || 0
+        } catch (e) {
+            console.error('Error parsing progress:', e)
+        }
+    }
 })
 
-function isSegmentDone(i) {
-  return segments[i].questions.every(q => answers.value[q.id]) && i < currentSegment.value
-}
+watch([answers, currentSegmentIndex, currentQuestionIndex], saveProgress, { deep: true })
 
-// ─── Persistence ──────────────────────────────────────────────────────────────
-
-function saveProgress() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      answers:        answers.value,
-      currentSegment: currentSegment.value,
-    }))
-  } catch { /* ignore */ }
-}
-
-function loadProgress() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (!saved) return
-    const { answers: savedAnswers, currentSegment: savedSegment } = JSON.parse(saved)
-    if (savedAnswers)  answers.value        = savedAnswers
-    if (savedSegment !== undefined) currentSegment.value = savedSegment
-  } catch { /* ignore */ }
-}
-
-function clearProgress() {
-  try { localStorage.removeItem(STORAGE_KEY) } catch { /* ignore */ }
-}
-
-// Load saved progress on mount
-onMounted(loadProgress)
-
-// Watch for changes and auto-save
-watch([answers, currentSegment], saveProgress, { deep: true })
-
-// ─── Methods ──────────────────────────────────────────────────────────────────
-
-function setAnswer(questionId, value) {
-  answers.value[questionId] = value
-}
-
-async function nextSegment() {
-  if (!isSegmentComplete.value || submitting.value) return
-
-  if (currentSegment.value < 3) {
-    currentSegment.value++
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    return
-  }
-
-  // Last segment → submit
-  submitting.value = true
-  try {
-    // q.id is now the real UUID from the seeded questions table
-    const allQuestions = segments.flatMap(s => s.questions)
-    const payload = allQuestions.map(q => ({
-      question_id:  q.id,
-      answer_value: answers.value[q.id],
-    }))
-
-    const response = await axios.post('/onboarding/submit', {
-      answers: payload,
-    })
-
-    // Store result in sessionStorage for Result page
-    sessionStorage.setItem('lumora_result', JSON.stringify(response.data?.data ?? {}))
-    clearProgress() // ← wipe saved progress so retaking starts fresh
-    router.visit(route('onboarding.result'))
-  } catch (err) {
-    console.error('Submit error:', err)
-    // Even on error, navigate to result (will show fallback)
-    router.visit(route('onboarding.result'))
-  } finally {
-    submitting.value = false
-  }
-}
 </script>
 
 <style scoped>
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.slide-enter-from {
-  opacity: 0;
-  transform: translateX(30px);
-}
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-30px);
-}
+.fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease, transform 0.3s ease; }
+.fade-enter-from { opacity: 0; transform: translateY(10px); }
+.fade-leave-to { opacity: 0; transform: translateY(-10px); }
 </style>
+
+
+

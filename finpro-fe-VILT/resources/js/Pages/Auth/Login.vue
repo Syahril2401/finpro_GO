@@ -1,75 +1,121 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 flex items-center justify-center px-4">
-    <!-- Background blobs -->
-    <div class="absolute top-0 left-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-80 h-80 bg-violet-600/20 rounded-full blur-3xl"></div>
+  <div class="min-h-screen bg-[#F0F2F9] flex flex-col items-center justify-center px-4 relative overflow-hidden font-sans">
+    <!-- Decorative background elements -->
+    <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-indigo-200/30 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-purple-200/30 rounded-full blur-[100px]"></div>
 
-    <div class="relative z-10 w-full max-w-md">
-      <!-- Logo -->
-      <div class="text-center mb-8">
-        <Link :href="route('landing')" class="inline-block">
-          <span class="text-3xl font-extrabold text-white tracking-tight">Lumora</span>
+    <!-- Main Content -->
+    <div class="relative z-10 w-full max-w-[500px] flex flex-col items-center">
+      <!-- Logo & Header -->
+      <div class="text-center mb-10">
+        <Link :href="route('landing')" class="flex items-center justify-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-[#3D3ACE] rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
+             <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+               <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+             </svg>
+          </div>
+          <span class="text-2xl font-black text-[#1E1B4B] tracking-tight">Lumora</span>
         </Link>
-        <p class="text-slate-400 mt-2 text-sm">Welcome back. Let's keep learning.</p>
+        <p class="text-slate-500 font-medium">Return to your Intelligent Sanctuary</p>
       </div>
 
-      <!-- Card -->
-      <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-        <h1 class="text-2xl font-bold text-white mb-6">Sign in to your account</h1>
-
-        <!-- Error -->
-        <div v-if="errors.email" class="bg-red-500/10 border border-red-500/30 text-red-300 text-sm rounded-xl px-4 py-3 mb-5">
-          {{ errors.email }}
-        </div>
-
-        <form @submit.prevent="submit" class="space-y-5">
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
-            <input
-              id="email"
-              v-model="form.email"
-              type="email"
-              autocomplete="email"
-              required
-              placeholder="you@example.com"
-              class="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
-            />
+      <!-- Login Card -->
+      <div class="w-full bg-white rounded-[40px] p-10 md:p-12 shadow-2xl shadow-indigo-100 border border-white/50">
+        <form @submit.prevent="submit" class="space-y-8">
+          <!-- Email Field -->
+          <div class="space-y-3">
+            <label class="block text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Email/Username</label>
+            <div class="relative group">
+              <span class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                </svg>
+              </span>
+              <input 
+                v-model="form.email"
+                type="email" 
+                placeholder="student@lumora.edu"
+                class="w-full bg-[#F3F4F6] border-transparent focus:bg-white focus:border-[#3D3ACE] focus:ring-4 focus:ring-indigo-100 rounded-2xl py-4 pl-14 pr-6 text-slate-700 font-medium transition-all duration-300"
+                required
+              >
+            </div>
+            <p v-if="errors.email" class="text-xs text-red-500 ml-1">{{ errors.email }}</p>
           </div>
 
-          <!-- Password -->
-          <div>
-            <label for="password" class="block text-sm font-medium text-slate-300 mb-1.5">Password</label>
-            <input
-              id="password"
-              v-model="form.password"
-              type="password"
-              autocomplete="current-password"
-              required
-              placeholder="Enter your password"
-              class="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
-            />
+          <!-- Password Field -->
+          <div class="space-y-3">
+            <label class="block text-[11px] font-black text-slate-400 uppercase tracking-widest ml-1">Password</label>
+            <div class="relative group">
+              <span class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </span>
+              <input 
+                v-model="form.password"
+                type="password" 
+                placeholder="••••••••"
+                class="w-full bg-[#F3F4F6] border-transparent focus:bg-white focus:border-[#3D3ACE] focus:ring-4 focus:ring-indigo-100 rounded-2xl py-4 pl-14 pr-12 text-slate-700 font-medium transition-all duration-300"
+                required
+              >
+              <button type="button" class="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex justify-end">
+              <a href="#" class="text-sm font-bold text-[#3D3ACE] hover:underline">Forgot Password?</a>
+            </div>
           </div>
 
-          <!-- Submit -->
-          <button
+          <!-- Login Button -->
+          <button 
             type="submit"
             :disabled="form.processing"
-            id="login-submit-btn"
-            class="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 text-white font-semibold py-3 rounded-xl transition-all shadow-lg shadow-indigo-900/50"
+            class="w-full bg-[#3D3ACE] hover:bg-[#322fb0] text-white font-bold py-5 rounded-2xl shadow-xl shadow-indigo-100 transition-all duration-300 transform active:scale-[0.98] disabled:opacity-70"
           >
-            <span v-if="form.processing">Signing in...</span>
-            <span v-else>Sign in</span>
+            <span v-if="form.processing">Logging in...</span>
+            <span v-else>Login</span>
+          </button>
+
+          <!-- Divider -->
+          <div class="relative flex items-center justify-center py-2">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-slate-100"></div>
+            </div>
+            <span class="relative bg-white px-4 text-[10px] font-black text-slate-300 uppercase tracking-[0.2em]">or continue with</span>
+          </div>
+
+          <!-- Google Login -->
+          <button type="button" class="w-full bg-[#F3F4F6] hover:bg-[#E5E7EB] text-slate-700 font-bold py-4 rounded-2xl flex items-center justify-center gap-3 transition-all">
+            <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-5 h-5" alt="Google Logo">
+            Login with Google
           </button>
         </form>
 
-        <p class="text-center text-sm text-slate-400 mt-6">
-          Don't have an account?
-          <Link :href="route('register')" class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">
-            Sign up
-          </Link>
+        <p class="text-center mt-10 text-[15px] font-medium text-slate-500">
+          New to the sanctuary? 
+          <Link :href="route('register')" class="text-[#3D3ACE] font-bold hover:underline">Join now</Link>
         </p>
       </div>
+
+      <!-- Footer Links -->
+      <div class="mt-12 flex gap-8 text-sm font-semibold text-slate-400">
+        <a href="#" class="hover:text-slate-600 transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-slate-600 transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-slate-600 transition-colors">Contact Support</a>
+      </div>
+    </div>
+
+    <!-- Floating glassmorphic element -->
+    <div class="absolute bottom-[-5%] right-[-5%] hidden lg:block">
+        <div class="w-96 h-96 bg-white/20 backdrop-blur-3xl rounded-[60px] border border-white/30 rotate-12 flex items-center justify-center p-12 text-slate-300">
+             <svg class="w-24 h-24 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+             </svg>
+        </div>
     </div>
   </div>
 </template>
@@ -92,3 +138,4 @@ function submit() {
   })
 }
 </script>
+

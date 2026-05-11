@@ -89,18 +89,18 @@ type AssessmentResponse struct {
 // =========================
 
 type ResultSummary struct {
-	ResultID            string    `gorm:"column:result_id;type:char(36);primaryKey"`
-	UserID              string    `gorm:"column:user_id;type:char(36);not null;index:idx_result_user"`
-	SessionID           string    `gorm:"column:session_id;type:char(36);not null;index:idx_result_session"`
-	TotalScore          *int      `gorm:"column:total_score"`
-	PlanningScore       *int      `gorm:"column:planning_score"`
-	TimeManagementScore *int      `gorm:"column:time_management_score"`
-	CognitiveScore      *int      `gorm:"column:cognitive_score"`
-	ReflectionScore     *int      `gorm:"column:reflection_score"`
-	CategoryResult      *string   `gorm:"column:category_result;type:text"` // TEXT for long AI JSON
-	CreatedAt           time.Time `gorm:"column:created_at;autoCreateTime"`
+	ResultID            string    `gorm:"column:result_id;type:char(36);primaryKey" json:"ResultID"`
+	UserID              string    `gorm:"column:user_id;type:char(36);not null;index:idx_result_user" json:"UserID"`
+	SessionID           string    `gorm:"column:session_id;type:char(36);not null;index:idx_result_session" json:"SessionID"`
+	TotalScore          *int      `gorm:"column:total_score" json:"TotalScore"`
+	PlanningScore       *int      `gorm:"column:planning_score" json:"PlanningScore"`
+	TimeManagementScore *int      `gorm:"column:time_management_score" json:"TimeManagementScore"`
+	CognitiveScore      *int      `gorm:"column:cognitive_score" json:"CognitiveScore"`
+	ReflectionScore     *int      `gorm:"column:reflection_score" json:"ReflectionScore"`
+	CategoryResult      *string   `gorm:"column:category_result;type:text" json:"CategoryResult"` // TEXT for long AI JSON
+	CreatedAt           time.Time `gorm:"column:created_at;autoCreateTime" json:"CreatedAt"`
 
-	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
+	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE" json:"-"`
 }
 
 func (ResultSummary) TableName() string { return "result_summary" }
