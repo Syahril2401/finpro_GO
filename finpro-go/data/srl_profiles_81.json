@@ -1,0 +1,4336 @@
+[
+  {
+    "combination_id": "L-L-L-L",
+    "profile_title": "The Lost Wanderer",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Scattered & Passive",
+    "consistency_score": 36,
+    "retention_score": 36,
+    "strengths": [],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Your Personal Coach",
+      "desc": "Use an AI tutor daily to compensate for missing structure — let it set your agenda, quiz you, and summarize sessions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-L-M",
+    "profile_title": "The Occasional Ponderer",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Reactive & Reflective",
+    "consistency_score": 36,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Your Personal Coach",
+      "desc": "Use an AI tutor daily to compensate for missing structure — let it set your agenda, quiz you, and summarize sessions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-L-H",
+    "profile_title": "The Deep Ruminator",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Reflective & Unfocused",
+    "consistency_score": 36,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-M-L",
+    "profile_title": "The Idle Thinker",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Shallow & Sporadic",
+    "consistency_score": 36,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-M-M",
+    "profile_title": "The Casual Learner",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Intuitive & Loose",
+    "consistency_score": 36,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-M-H",
+    "profile_title": "The Reflective Drifter",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Thoughtful & Unstructured",
+    "consistency_score": 36,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-H-L",
+    "profile_title": "The Chaotic Genius",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Deep & Reactive",
+    "consistency_score": 36,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-H-M",
+    "profile_title": "The Brilliant Wanderer",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Insightful & Erratic",
+    "consistency_score": 36,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-L-H-H",
+    "profile_title": "The Untethered Scholar",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Deep & Self-Aware",
+    "consistency_score": 36,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-L-L",
+    "profile_title": "The Rushed Novice",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Hurried & Surface",
+    "consistency_score": 48,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-L-M",
+    "profile_title": "The Busy Ponderer",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Reactive & Timely",
+    "consistency_score": 48,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-L-H",
+    "profile_title": "The Scheduled Dreamer",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Reflective & Methodical",
+    "consistency_score": 48,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-M-L",
+    "profile_title": "The Active Drifter",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Engaged & Unplanned",
+    "consistency_score": 48,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-M-M",
+    "profile_title": "The Adaptive Learner",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Balanced & Intuitive",
+    "consistency_score": 48,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-M-H",
+    "profile_title": "The Mindful Explorer",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Thoughtful & Flexible",
+    "consistency_score": 48,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-H-L",
+    "profile_title": "The Spontaneous Expert",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Fluid & Insightful",
+    "consistency_score": 48,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-H-M",
+    "profile_title": "The Agile Thinker",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Sharp & Adaptive",
+    "consistency_score": 48,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-M-H-H",
+    "profile_title": "The Reflective Virtuoso",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Deep & Integrated",
+    "consistency_score": 48,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-L-L",
+    "profile_title": "The Efficient Sprinter",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Fast & Shallow",
+    "consistency_score": 62,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Powered Content Simplifier",
+      "desc": "Use AI to distill complex material into digestible chunks timed to your schedule, since processing depth is your bottleneck."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-L-M",
+    "profile_title": "The Disciplined Ponderer",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Steady & Reflective",
+    "consistency_score": 62,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Powered Content Simplifier",
+      "desc": "Use AI to distill complex material into digestible chunks timed to your schedule, since processing depth is your bottleneck."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-L-H",
+    "profile_title": "The Mindful Scheduler",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Structured & Introspective",
+    "consistency_score": 62,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-M-L",
+    "profile_title": "The Productive Drifter",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Efficient & Unanchored",
+    "consistency_score": 62,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-M-M",
+    "profile_title": "The Balanced Executor",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Steady & Competent",
+    "consistency_score": 62,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-M-H",
+    "profile_title": "The Reflective Achiever",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Consistent & Thoughtful",
+    "consistency_score": 62,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-H-L",
+    "profile_title": "The Focused Maverick",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Intense & Purposeful",
+    "consistency_score": 62,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-H-M",
+    "profile_title": "The Diligent Innovator",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Sharp & Systematic",
+    "consistency_score": 62,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      },
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "L-H-H-H",
+    "profile_title": "The Refined Strategist",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Deep & Disciplined",
+    "consistency_score": 62,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Poor Planning",
+        "desc": "Starts tasks without structure, leading to wasted effort and confusion."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Build a Weekly Study Blueprint",
+        "desc": "Use a simple template each Sunday to map out 3 priority learning goals for the week."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Use the 3-Task Rule",
+        "desc": "Each morning write exactly 3 learning tasks for the day — no more, no less — to create lightweight structure."
+      },
+      {
+        "title": "Adopt a Weekly Review",
+        "desc": "Every Sunday spend 10 min reviewing what you learned and planning the next week's focus areas."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-L-L",
+    "profile_title": "The Aspiring Dreamer",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Planned & Passive",
+    "consistency_score": 48,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-L-M",
+    "profile_title": "The Thoughtful Planner",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Organized & Reflective",
+    "consistency_score": 48,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      },
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-L-H",
+    "profile_title": "The Reflective Architect",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Introspective & Structured",
+    "consistency_score": 48,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      },
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-M-L",
+    "profile_title": "The Organized Tinkerer",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Methodical & Shallow",
+    "consistency_score": 48,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-M-M",
+    "profile_title": "The Measured Learner",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Balanced & Steady",
+    "consistency_score": 48,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-M-H",
+    "profile_title": "The Deliberate Processor",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Careful & Deep",
+    "consistency_score": 48,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-H-L",
+    "profile_title": "The Strategic Genius",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Analytical & Visionary",
+    "consistency_score": 48,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-H-M",
+    "profile_title": "The Insightful Planner",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Sharp & Considered",
+    "consistency_score": 48,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-L-H-H",
+    "profile_title": "The Deep Strategist",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Comprehensive & Reflective",
+    "consistency_score": 48,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-L-L",
+    "profile_title": "The Steady Beginner",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Consistent & Surface",
+    "consistency_score": 60,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-L-M",
+    "profile_title": "The Reliable Ponderer",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Structured & Moderate",
+    "consistency_score": 60,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-L-H",
+    "profile_title": "The Consistent Reflector",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Methodical & Introspective",
+    "consistency_score": 60,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-M-L",
+    "profile_title": "The Competent Executor",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Balanced & Practical",
+    "consistency_score": 60,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-M-M",
+    "profile_title": "The All-Rounder",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Balanced & Versatile",
+    "consistency_score": 60,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      },
+      {
+        "title": "Celebrate Small Wins",
+        "desc": "Acknowledge each completed session with a small reward to reinforce learning as a positive habit."
+      },
+      {
+        "title": "Find an Accountability Partner",
+        "desc": "Share your weekly goals with someone who will check in on your progress every 7 days."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-M-H",
+    "profile_title": "The Reflective Generalist",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Steady & Self-Aware",
+    "consistency_score": 60,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      },
+      {
+        "title": "Track Learning Patterns",
+        "desc": "Log your session quality, energy, and retention weekly to spot what conditions make you learn best."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-H-L",
+    "profile_title": "The Focused Performer",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Sharp & Structured",
+    "consistency_score": 60,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-H-M",
+    "profile_title": "The High-Potential Learner",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Analytical & Consistent",
+    "consistency_score": 60,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-M-H-H",
+    "profile_title": "The Integrated Achiever",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Deep & Well-Rounded",
+    "consistency_score": 60,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-L-L",
+    "profile_title": "The Organized Sprinter",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Efficient & Reactive",
+    "consistency_score": 74,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Powered Content Simplifier",
+      "desc": "Use AI to distill complex material into digestible chunks timed to your schedule, since processing depth is your bottleneck."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-L-M",
+    "profile_title": "The Structured Ponderer",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Disciplined & Reflective",
+    "consistency_score": 74,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Powered Content Simplifier",
+      "desc": "Use AI to distill complex material into digestible chunks timed to your schedule, since processing depth is your bottleneck."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-L-H",
+    "profile_title": "The Mindful Organizer",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Introspective & Systematic",
+    "consistency_score": 74,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Moderate Planning",
+        "desc": "Maintains basic structure that prevents complete derailment.",
+        "icon": "📋"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-M-L",
+    "profile_title": "The Reliable Producer",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Steady & Productive",
+    "consistency_score": 74,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-M-M",
+    "profile_title": "The Well-Structured Learner",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Balanced & Consistent",
+    "consistency_score": 74,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      },
+      {
+        "title": "Batch Similar Tasks",
+        "desc": "Group related learning activities together to minimize context-switching and maximize flow states."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-M-H",
+    "profile_title": "The Reflective Professional",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Systematic & Thoughtful",
+    "consistency_score": 74,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      },
+      {
+        "title": "Batch Similar Tasks",
+        "desc": "Group related learning activities together to minimize context-switching and maximize flow states."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-H-L",
+    "profile_title": "The Efficient Analyst",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Sharp & Driven",
+    "consistency_score": 74,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-H-M",
+    "profile_title": "The High-Performing Thinker",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Insightful & Disciplined",
+    "consistency_score": 74,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      },
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "M-H-H-H",
+    "profile_title": "The Peak Strategist",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Comprehensive & Elite",
+    "consistency_score": 74,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Sharpen Goal Specificity",
+        "desc": "Upgrade vague plans to SMART goals with deadlines and measurable checkpoints."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-L-L",
+    "profile_title": "The Visionary Procrastinator",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Planned & Unexecuted",
+    "consistency_score": 62,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Your Execution Engine",
+      "desc": "You plan well but lose momentum — use AI to break each plan into timed micro-tasks and hold you accountable in real time."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-L-M",
+    "profile_title": "The Reflective Planner",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Strategic & Pensive",
+    "consistency_score": 62,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      },
+      {
+        "title": "Occasional Reflection",
+        "desc": "Pauses to review progress, improving long-term retention.",
+        "icon": "📝"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Your Execution Engine",
+      "desc": "You plan well but lose momentum — use AI to break each plan into timed micro-tasks and hold you accountable in real time."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-L-H",
+    "profile_title": "The Deep Planner",
+    "deep_work_capacity": 36,
+    "cognitive_style": "Visionary & Introspective",
+    "consistency_score": 62,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      },
+      {
+        "title": "Deep Reflective Practice",
+        "desc": "Reviews and consolidates learning effectively after sessions.",
+        "icon": "🔍"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-M-L",
+    "profile_title": "The Structured Tinkerer",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Organized & Moderate",
+    "consistency_score": 62,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Your Execution Engine",
+      "desc": "You plan well but lose momentum — use AI to break each plan into timed micro-tasks and hold you accountable in real time."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-M-M",
+    "profile_title": "The Methodical Learner",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Planned & Reflective",
+    "consistency_score": 62,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Your Execution Engine",
+      "desc": "You plan well but lose momentum — use AI to break each plan into timed micro-tasks and hold you accountable in real time."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-M-H",
+    "profile_title": "The Thoughtful Strategist",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Deliberate & Self-Aware",
+    "consistency_score": 62,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-H-L",
+    "profile_title": "The Brilliant Planner",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Visionary & Cognitive",
+    "consistency_score": 62,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-H-M",
+    "profile_title": "The Analytical Mastermind",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Sharp & Structured",
+    "consistency_score": 62,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      },
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-L-H-H",
+    "profile_title": "The Complete Thinker",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Deep & Comprehensive",
+    "consistency_score": 62,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Weak Time Management",
+        "desc": "Struggles to allocate study time consistently, causing last-minute cramming."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Time-Block Your Learning",
+        "desc": "Schedule fixed 25–45 min study blocks in your calendar and treat them as non-negotiable."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Try the Pomodoro Technique",
+        "desc": "Set a 25-min timer for focused study, then take a 5-min break. Repeat 4 times, then take a longer break."
+      },
+      {
+        "title": "Block-Schedule Study Time",
+        "desc": "Open your calendar and block specific hours for learning, treating them like important meetings."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-L-L",
+    "profile_title": "The Organized Starter",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Structured & Developing",
+    "consistency_score": 74,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-L-M",
+    "profile_title": "The Deliberate Learner",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Methodical & Reflective",
+    "consistency_score": 74,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-L-H",
+    "profile_title": "The Introspective Organizer",
+    "deep_work_capacity": 48,
+    "cognitive_style": "Structured & Deep",
+    "consistency_score": 74,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-M-L",
+    "profile_title": "The Diligent Executor",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Systematic & Practical",
+    "consistency_score": 74,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-M-M",
+    "profile_title": "The Balanced Professional",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Steady & Rounded",
+    "consistency_score": 74,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      },
+      {
+        "title": "Conduct Pre-Mortems",
+        "desc": "Before starting a new topic, imagine it failed — what went wrong? Use that to build prevention into your plan."
+      },
+      {
+        "title": "Start Small, Build Momentum",
+        "desc": "Begin each session with your easiest task to overcome inertia and build confidence before harder work."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-M-H",
+    "profile_title": "The Reflective Doer",
+    "deep_work_capacity": 60,
+    "cognitive_style": "Systematic & Thoughtful",
+    "consistency_score": 74,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      },
+      {
+        "title": "Track Learning Patterns",
+        "desc": "Log your session quality, energy, and retention weekly to spot what conditions make you learn best."
+      },
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-H-L",
+    "profile_title": "The Sharp Achiever",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Cognitive & Structured",
+    "consistency_score": 74,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-H-M",
+    "profile_title": "The High-Caliber Thinker",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Analytical & Disciplined",
+    "consistency_score": 74,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      },
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-M-H-H",
+    "profile_title": "The Elite Learner",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Deep & Masterful",
+    "consistency_score": 74,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Decent Time Management",
+        "desc": "Usually sticks to schedules, reducing wasted hours.",
+        "icon": "🕐"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Reduce Schedule Drift",
+        "desc": "Track actual vs planned study time weekly to identify and fix your biggest time leaks."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-L-L",
+    "profile_title": "The Master Organizer",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Systematic & Efficient",
+    "consistency_score": 88,
+    "retention_score": 36,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      },
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      },
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Powered Content Simplifier",
+      "desc": "Use AI to distill complex material into digestible chunks timed to your schedule, since processing depth is your bottleneck."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-L-M",
+    "profile_title": "The Structured Reflector",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Disciplined & Mindful",
+    "consistency_score": 88,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      },
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Powered Content Simplifier",
+      "desc": "Use AI to distill complex material into digestible chunks timed to your schedule, since processing depth is your bottleneck."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-L-H",
+    "profile_title": "The Refined Planner",
+    "deep_work_capacity": 62,
+    "cognitive_style": "Introspective & Systematic",
+    "consistency_score": 88,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      },
+      {
+        "title": "Strategic Planning",
+        "desc": "Breaks complex goals into structured steps before starting.",
+        "icon": "🗓️"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Surface-Level Processing",
+        "desc": "Tends to memorize rather than understand, limiting transferable knowledge."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Practice Retrieval over Re-reading",
+        "desc": "After every session, close notes and write a summary from memory to deepen processing."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Use the Feynman Technique",
+        "desc": "After reading, explain the concept out loud as if teaching a 10-year-old. Gaps will become obvious immediately."
+      },
+      {
+        "title": "Make Concept Maps",
+        "desc": "Draw connections between ideas visually to move beyond surface memorization into relational understanding."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-M-L",
+    "profile_title": "The High-Output Producer",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Efficient & Practical",
+    "consistency_score": 88,
+    "retention_score": 48,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      },
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-M-M",
+    "profile_title": "The Peak Performer",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Balanced & High-Achieving",
+    "consistency_score": 88,
+    "retention_score": 60,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      },
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as Personalized Tutor",
+      "desc": "Use adaptive AI tools to generate practice problems, explain gaps, and track progress across all four learning dimensions."
+    },
+    "recommendations": [
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      },
+      {
+        "title": "Batch Similar Tasks",
+        "desc": "Group related learning activities together to minimize context-switching and maximize flow states."
+      },
+      {
+        "title": "Set Milestone Checkpoints",
+        "desc": "Break long-term goals into monthly milestones with clear success criteria to maintain direction."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-M-H",
+    "profile_title": "The Reflective High-Achiever",
+    "deep_work_capacity": 74,
+    "cognitive_style": "Thorough & Self-Aware",
+    "consistency_score": 88,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Moderate Cognitive Engagement",
+        "desc": "Engages meaningfully with material beyond rote recall.",
+        "icon": "💡"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Embrace Interleaved Practice",
+        "desc": "Mix topics within a session rather than blocking them to force deeper cognitive connections."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI-Enhanced Reflection Loop",
+      "desc": "Feed your session notes to AI for deeper pattern analysis and personalized next-step recommendations."
+    },
+    "recommendations": [
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      },
+      {
+        "title": "Batch Similar Tasks",
+        "desc": "Group related learning activities together to minimize context-switching and maximize flow states."
+      },
+      {
+        "title": "Use Spaced Repetition",
+        "desc": "Review material at increasing intervals using flashcard apps like Anki to exploit the spacing effect."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-H-L",
+    "profile_title": "The Cognitive Powerhouse",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Intense & Driven",
+    "consistency_score": 88,
+    "retention_score": 62,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [
+      {
+        "title": "Lack of Reflection",
+        "desc": "Rarely reviews learning, causing rapid forgetting and missed insights."
+      }
+    ],
+    "areas_for_growth": [
+      {
+        "title": "Implement a 5-Min Review Ritual",
+        "desc": "End every study session by writing one key insight and one open question in a learning journal."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Keep a Learning Journal",
+        "desc": "Write 3 sentences after every session: what you learned, what confused you, and what to do next."
+      },
+      {
+        "title": "Schedule a Weekly Debrief",
+        "desc": "Every Friday, review the week's learning: what stuck, what didn't, and what you would change."
+      },
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-H-M",
+    "profile_title": "The Near-Complete Learner",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Comprehensive & Sharp",
+    "consistency_score": 88,
+    "retention_score": 74,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [
+      {
+        "title": "Deepen Reflection Quality",
+        "desc": "Move from surface journaling to structured Gibbs Reflection Cycle for richer insights."
+      }
+    ],
+    "ai_strategy": {
+      "title": "AI as a Thinking Partner",
+      "desc": "Engage AI in Socratic dialogue — challenge your understanding, explore edge cases, and synthesize across domains."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  },
+  {
+    "combination_id": "H-H-H-H",
+    "profile_title": "The Self-Actualized Learner",
+    "deep_work_capacity": 88,
+    "cognitive_style": "Complete & Mastery-Level",
+    "consistency_score": 88,
+    "retention_score": 88,
+    "strengths": [
+      {
+        "title": "Strong Cognitive Processing",
+        "desc": "Connects concepts deeply and applies knowledge creatively.",
+        "icon": "🧠"
+      },
+      {
+        "title": "Excellent Time Management",
+        "desc": "Allocates and protects study blocks with discipline.",
+        "icon": "⏰"
+      }
+    ],
+    "weaknesses": [],
+    "areas_for_growth": [],
+    "ai_strategy": {
+      "title": "AI as a Research Accelerator",
+      "desc": "Deploy AI to handle information synthesis so you can focus on higher-order analysis and creative application."
+    },
+    "recommendations": [
+      {
+        "title": "Teach Others Weekly",
+        "desc": "Explain concepts to a friend or colleague weekly — teaching is the highest form of learning."
+      },
+      {
+        "title": "Create Original Content",
+        "desc": "Turn your knowledge into blog posts, summaries, or projects to cement and demonstrate mastery."
+      },
+      {
+        "title": "Protect Your Peak Hours",
+        "desc": "Identify your 2–3 highest-energy hours daily and guard them exclusively for your hardest learning tasks."
+      }
+    ]
+  }
+]

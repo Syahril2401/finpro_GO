@@ -9,7 +9,8 @@ import (
 type AssessmentRepository interface {
 	GetQuestions() ([]model.Question, error)
 	GetQuestionByID(id string) (model.Question, error)
-	SubmitResponses(responses []model.AssessmentResponse, summary *model.ResultSummary, log *model.AILog) error
+	SubmitResponses(summary *model.ResultSummary, log *model.AILog) error
+	SubmitResult(summary *model.ResultSummary) error
 	GetLastSummary(userID string) (*model.ResultSummary, error)
 	HasCompletedAssessment(userID string) (bool, error)
 	GetAllEvaluations() ([]model.Evaluation, error)
@@ -29,12 +30,8 @@ func (r *assessmentRepository) GetQuestions() ([]model.Question, error) {
 	return questions, err
 }
 
-func (r *assessmentRepository) SubmitResponses(responses []model.AssessmentResponse, summary *model.ResultSummary, log *model.AILog) error {
+func (r *assessmentRepository) SubmitResponses(summary *model.ResultSummary, log *model.AILog) error {
 	return r.db.Transaction(func(tx *gorm.DB) error {
-		// Save responses
-		if err := tx.Create(&responses).Error; err != nil {
-			return err
-		}
 		// Save summary
 		if err := tx.Create(summary).Error; err != nil {
 			return err
@@ -45,6 +42,10 @@ func (r *assessmentRepository) SubmitResponses(responses []model.AssessmentRespo
 		}
 		return nil
 	})
+}
+
+func (r *assessmentRepository) SubmitResult(summary *model.ResultSummary) error {
+	return r.db.Create(summary).Error
 }
 
 func (r *assessmentRepository) GetLastSummary(userID string) (*model.ResultSummary, error) {

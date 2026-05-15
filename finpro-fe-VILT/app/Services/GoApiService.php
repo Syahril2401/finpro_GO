@@ -17,12 +17,12 @@ class GoApiService
     protected function withAuth(): \Illuminate\Http\Client\PendingRequest
     {
         $token = Session::get('go_token');
-        return Http::withToken($token)->acceptJson();
+        return Http::withToken($token)->acceptJson()->timeout(15);
     }
 
     protected function withoutAuth(): \Illuminate\Http\Client\PendingRequest
     {
-        return Http::acceptJson();
+        return Http::acceptJson()->timeout(15);
     }
 
     // ─── Auth ────────────────────────────────────────────────────────────────

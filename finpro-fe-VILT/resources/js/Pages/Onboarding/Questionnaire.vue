@@ -130,7 +130,7 @@ const submitting = ref(false)
 // Segments matching DB categories
 const segments = [
     { id: 'planning', shortTitle: 'Planning', title: 'Planning Habits' },
-    { id: 'time_management', shortTitle: 'Time Mgmt', title: 'Time Management' },
+    { id: 'time_management', shortTitle: 'Time Management', title: 'Time Management' },
     { id: 'cognitive', shortTitle: 'Cognitive', title: 'Cognitive Strategies' },
     { id: 'reflection', shortTitle: 'Reflection', title: 'Self-Reflection' },
 ]

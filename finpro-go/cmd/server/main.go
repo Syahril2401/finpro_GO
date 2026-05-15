@@ -29,9 +29,10 @@ func main() {
 	dashRepo := repository.NewDashboardRepository(config.DB)
 
 	// Initialize Services
+	profileService := service.NewProfileService("data/srl_profiles_81.json")
 	aiService := service.NewAIService()
 	authService := service.NewAuthService(userRepo)
-	assessService := service.NewAssessmentService(assessRepo, aiService)
+	assessService := service.NewAssessmentService(assessRepo, profileService)
 	dashService := service.NewDashboardService(dashRepo, assessRepo, userRepo)
 	adminService := service.NewAdminService(adminRepo, userRepo, assessRepo)
 

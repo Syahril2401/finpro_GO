@@ -21,8 +21,62 @@
             Your Study Profile: <span class="text-[#3D3ACE]">{{ profileTitle }}</span>
         </h1>
         <p class="text-slate-500 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            We've analyzed your responses. You possess a rare ability to enter deep work states, though your tactical planning has room for optimization.
+            We've analyzed your responses and created a personalized roadmap for your academic success.
         </p>
+      </div>
+
+      <!-- ═══ Learning Analytics Highlights ═══ -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <!-- Deep Work Capacity -->
+          <div class="bg-white rounded-[32px] p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center group hover:shadow-md transition-all">
+              <div class="relative w-24 h-24 mb-4 flex items-center justify-center">
+                  <svg class="w-full h-full transform -rotate-90">
+                      <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="8" fill="transparent" class="text-slate-100" />
+                      <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="8" fill="transparent" 
+                          class="text-[#3D3ACE] transition-all duration-1000"
+                          :stroke-dasharray="251.2"
+                          :stroke-dashoffset="251.2 - (251.2 * deepWorkCapacity / 100)"
+                          stroke-linecap="round" />
+                  </svg>
+                  <span class="absolute text-xl font-black text-[#1E1B4B]">{{ deepWorkCapacity }}%</span>
+              </div>
+              <h4 class="text-sm font-black text-[#1E1B4B] mb-1">Deep Work Capacity</h4>
+              <p class="text-[11px] text-slate-400 font-medium leading-tight px-4">Kemampuan fokus mendalam tanpa distraksi</p>
+          </div>
+
+          <!-- Consistency -->
+          <div class="bg-white rounded-[32px] p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center group hover:shadow-md transition-all">
+              <div class="relative w-24 h-24 mb-4 flex items-center justify-center">
+                  <svg class="w-full h-full transform -rotate-90">
+                      <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="8" fill="transparent" class="text-slate-100" />
+                      <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="8" fill="transparent" 
+                          class="text-emerald-500 transition-all duration-1000"
+                          :stroke-dasharray="251.2"
+                          :stroke-dashoffset="251.2 - (251.2 * consistencyScore / 100)"
+                          stroke-linecap="round" />
+                  </svg>
+                  <span class="absolute text-xl font-black text-[#1E1B4B]">{{ consistencyScore }}%</span>
+              </div>
+              <h4 class="text-sm font-black text-[#1E1B4B] mb-1">Learning Consistency</h4>
+              <p class="text-[11px] text-slate-400 font-medium leading-tight px-4">Kestabilan dan rutinitas jadwal belajarmu</p>
+          </div>
+
+          <!-- Retention -->
+          <div class="bg-white rounded-[32px] p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center group hover:shadow-md transition-all">
+              <div class="relative w-24 h-24 mb-4 flex items-center justify-center">
+                  <svg class="w-full h-full transform -rotate-90">
+                      <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="8" fill="transparent" class="text-slate-100" />
+                      <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="8" fill="transparent" 
+                          class="text-amber-500 transition-all duration-1000"
+                          :stroke-dasharray="251.2"
+                          :stroke-dashoffset="251.2 * (1 - retentionScore / 100)"
+                          stroke-linecap="round" />
+                  </svg>
+                  <span class="absolute text-xl font-black text-[#1E1B4B]">{{ retentionScore }}%</span>
+              </div>
+              <h4 class="text-sm font-black text-[#1E1B4B] mb-1">Knowledge Retention</h4>
+              <p class="text-[11px] text-slate-400 font-medium leading-tight px-4">Seberapa lama materi bertahan di ingatanmu</p>
+          </div>
       </div>
 
       <!-- ═══ Top Row: Core Strengths + Cognitive Style ═══ -->
@@ -33,27 +87,19 @@
             <h3 class="text-lg font-black text-[#1E1B4B] mb-6">Core Strengths</h3>
 
             <div class="space-y-5 mb-8">
-                <div v-for="(s, idx) in strengths" :key="idx" class="flex items-start gap-4">
-                    <div class="w-10 h-10 bg-indigo-50 text-[#3D3ACE] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="getIconPath(s.icon)" />
-                        </svg>
+                <template v-if="strengths.length > 0">
+                    <div v-for="(s, idx) in strengths" :key="idx" class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 text-lg">
+                            {{ s.icon || '✅' }}
+                        </div>
+                        <div class="min-w-0">
+                            <h4 class="text-[15px] font-bold text-emerald-950 mb-1">{{ s.title }}</h4>
+                            <p class="text-slate-500 font-medium text-[13px] leading-relaxed">{{ s.desc }}</p>
+                        </div>
                     </div>
-                    <div class="min-w-0">
-                        <h4 class="text-[15px] font-bold text-[#1E1B4B] mb-1">{{ s.title }}</h4>
-                        <p class="text-slate-400 font-medium text-[13px] leading-relaxed">{{ s.desc }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Deep Work Capacity -->
-            <div class="pt-6 border-t border-slate-100">
-                <div class="flex justify-between items-end mb-3">
-                    <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Deep Work Capacity</span>
-                    <span class="text-lg font-black text-[#3D3ACE]">{{ deepWorkCapacity }}%</span>
-                </div>
-                <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-                    <div class="h-full bg-[#3D3ACE] rounded-full transition-all duration-1000 shadow-[0_0_10px_rgba(61,58,206,0.3)]" :style="{ width: deepWorkCapacity + '%' }"></div>
+                </template>
+                <div v-else class="text-center py-6 bg-slate-50 rounded-2xl border border-slate-100 border-dashed">
+                    <p class="text-slate-500 font-medium text-sm">We are focusing entirely on growth areas for now.</p>
                 </div>
             </div>
         </div>
@@ -64,35 +110,68 @@
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200" alt="Profile" class="w-full h-full object-cover">
             </div>
             <h3 class="text-lg font-black text-[#1E1B4B] mb-1 relative z-10">Your Cognitive Style</h3>
-            <p class="text-slate-400 font-bold text-[11px] uppercase tracking-widest mb-6 relative z-10">{{ cognitiveStyle }}</p>
+            <p class="text-slate-400 font-bold text-[11px] uppercase tracking-widest relative z-10">{{ cognitiveStyle }}</p>
+        </div>
+      </div>
 
-            <div class="grid grid-cols-2 gap-4 w-full relative z-10">
-                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100/50">
-                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Consistency</p>
-                    <p class="text-2xl font-black text-[#1E1B4B]">{{ consistencyScore }}%</p>
+      <!-- ═══ Middle Row: Weaknesses & Areas for Growth ═══ -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Weaknesses -->
+        <div class="bg-white rounded-[32px] p-8 shadow-lg shadow-rose-50/50 border border-slate-100/80">
+            <h3 class="text-lg font-black text-rose-950 mb-6 flex items-center gap-2">
+                <span class="text-xl">⚠️</span>
+                Key Weaknesses
+            </h3>
+            <div class="space-y-4">
+                <template v-if="realWeaknesses.length > 0">
+                    <div v-for="(w, idx) in realWeaknesses" :key="idx" class="p-5 bg-rose-50/80 rounded-2xl border border-rose-100 group hover:border-rose-200 transition-all hover:bg-white hover:shadow-lg hover:shadow-rose-50">
+                        <h4 class="text-[15px] font-bold text-rose-900 mb-1.5">{{ w.title }}</h4>
+                        <p class="text-[13px] font-medium text-rose-700/80 leading-relaxed">{{ w.desc }}</p>
+                    </div>
+                </template>
+                <div v-else class="text-center py-6 bg-slate-50 rounded-2xl border border-slate-100 border-dashed">
+                    <p class="text-slate-500 font-medium text-sm">No critical weaknesses identified.</p>
                 </div>
-                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-100/50">
-                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Retention</p>
-                    <p class="text-2xl font-black text-[#1E1B4B]">{{ retentionScore }}%</p>
+            </div>
+        </div>
+
+        <!-- Areas for Growth -->
+        <div class="bg-white rounded-[32px] p-8 shadow-lg shadow-amber-50/50 border border-slate-100/80">
+            <h3 class="text-lg font-black text-amber-950 mb-6 flex items-center gap-2">
+                <span class="text-xl">📈</span>
+                Areas for Growth
+            </h3>
+            <div class="space-y-4">
+                <template v-if="areasForGrowth.length > 0">
+                    <div v-for="(a, idx) in areasForGrowth" :key="idx" class="p-5 bg-amber-50/80 rounded-2xl border border-amber-100 group hover:border-amber-200 transition-all hover:bg-white hover:shadow-lg hover:shadow-amber-50">
+                        <h4 class="text-[15px] font-bold text-amber-900 mb-1.5">{{ a.title }}</h4>
+                        <p class="text-[13px] font-medium text-amber-700/80 leading-relaxed">{{ a.desc }}</p>
+                    </div>
+                </template>
+                <div v-else class="text-center py-6 bg-slate-50 rounded-2xl border border-slate-100 border-dashed">
+                    <p class="text-slate-500 font-medium text-sm">Reviewing growth areas...</p>
                 </div>
             </div>
         </div>
       </div>
 
-      <!-- ═══ Bottom Row: Areas for Growth + AI Strategy ═══ -->
+      <!-- ═══ Bottom Row: Recommendations + AI Strategy ═══ -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-
-        <!-- Areas for Growth -->
-        <div class="bg-white rounded-[32px] p-8 shadow-lg shadow-indigo-50/50 border border-slate-100/80">
-            <h3 class="text-lg font-black text-[#1E1B4B] mb-6 flex items-center gap-2">
-                <span class="text-xl">📈</span>
-                Areas for Growth
+        <!-- Recommendations -->
+        <div class="bg-white rounded-[32px] p-8 shadow-lg shadow-sky-50/50 border border-slate-100/80">
+            <h3 class="text-lg font-black text-sky-950 mb-6 flex items-center gap-2">
+                <span class="text-xl">💡</span>
+                Recommendations
             </h3>
-
             <div class="space-y-4">
-                <div v-for="(w, idx) in weaknesses" :key="idx" class="p-5 bg-slate-50/80 rounded-2xl border border-slate-100 group hover:border-indigo-100 transition-all hover:bg-white hover:shadow-lg hover:shadow-indigo-50">
-                    <h4 class="text-[15px] font-bold text-[#1E1B4B] mb-1.5">{{ w.title }}</h4>
-                    <p class="text-[13px] font-medium text-slate-400 leading-relaxed">{{ w.desc }}</p>
+                <template v-if="realRecommendations.length > 0">
+                    <div v-for="(r, idx) in realRecommendations" :key="idx" class="p-5 bg-sky-50/80 rounded-2xl border border-sky-100 group hover:border-sky-200 transition-all hover:bg-white hover:shadow-lg hover:shadow-sky-50">
+                        <h4 class="text-[15px] font-bold text-sky-900 mb-1.5">{{ r.title }}</h4>
+                        <p class="text-[13px] font-medium text-sky-700/80 leading-relaxed">{{ r.desc }}</p>
+                    </div>
+                </template>
+                <div v-else class="text-center py-6 bg-slate-50 rounded-2xl border border-slate-100 border-dashed">
+                    <p class="text-slate-500 font-medium text-sm">Processing recommendations...</p>
                 </div>
             </div>
         </div>
@@ -226,47 +305,71 @@ const defaultIcons = [
 ]
 
 function getIconPath(icon) {
-    if (icon && typeof icon === 'string' && icon.startsWith('M')) return icon
+    // Only accept valid-looking SVG path strings (must contain at least a few path commands like M, L, C, Z, v, h, etc.)
+    if (icon && typeof icon === 'string' && icon.startsWith('M') && icon.length > 20) return icon
     return defaultIcons[0]
 }
 
 const strengths = computed(() => {
     const raw = aiData.value.strengths
-    if (Array.isArray(raw) && raw.length > 0) {
+    if (Array.isArray(raw)) {
+        if (raw.length === 0) return [] // AI explicitly returned no strengths
         return raw.map((s, i) => ({
             title: s.title || `Strength ${i + 1}`,
             desc: s.desc || s.description || '',
             icon: s.icon || defaultIcons[i % defaultIcons.length]
         }))
     }
+    // Fallback if data is completely missing
     return [
-        { title: 'Strong Concentration', desc: 'You naturally filter out digital noise and maintain high-quality focus for sessions exceeding 90 minutes.', icon: defaultIcons[0] },
-        { title: 'Conceptual Mastery', desc: 'You excel at connecting complex ideas rather than just memorizing isolated facts.', icon: defaultIcons[1] }
+        { title: 'Analyzing...', desc: 'We are processing your strengths.', icon: defaultIcons[0] }
     ]
 })
 
-const weaknesses = computed(() => {
-    // Prioritize areas_for_growth as requested in new prompt, fallback to weaknesses
-    const raw = aiData.value.areas_for_growth || aiData.value.weaknesses
-    if (Array.isArray(raw) && raw.length > 0) {
+const realWeaknesses = computed(() => {
+    const raw = aiData.value.weaknesses
+    if (Array.isArray(raw)) {
+        if (raw.length === 0) return []
+        return raw.map((w, i) => ({
+            title: w.title || `Weakness ${i + 1}`,
+            desc: w.desc || w.description || ''
+        }))
+    }
+    return []
+})
+
+const areasForGrowth = computed(() => {
+    const raw = aiData.value.areas_for_growth
+    if (Array.isArray(raw)) {
+        if (raw.length === 0) return []
         return raw.map((w, i) => ({
             title: w.title || `Area ${i + 1}`,
             desc: w.desc || w.description || ''
         }))
     }
     return [
-        { title: 'Planning Consistency', desc: 'Your performance peaks in bursts. Stabilizing your daily routine will prevent late-night fatigue.' },
-        { title: 'Recall Verification', desc: 'Transition from passive reading to active testing to solidify long-term memory structures.' }
+        { title: 'Analyzing...', desc: 'We are processing your growth areas.' }
     ]
 })
 
+const realRecommendations = computed(() => {
+    const raw = aiData.value.recommendations
+    if (Array.isArray(raw)) {
+        if (raw.length === 0) return []
+        return raw.map((r, i) => ({
+            title: r.title || `Recommendation ${i + 1}`,
+            desc: r.desc || r.description || ''
+        }))
+    }
+    return []
+})
+
 const aiStrategy = computed(() => {
-    // Prioritize ai_strategy, fallback to first recommendation
-    const raw = aiData.value.ai_strategy || (aiData.value.recommendations && aiData.value.recommendations[0])
+    const raw = aiData.value.ai_strategy
     if (raw && raw.title) return raw
     return {
         title: 'The "Interval" Strategy',
-        desc: 'Based on your high concentration scores, we recommend 90-minute Deep Cycles followed by 15-minute sensory breaks. Use the first 5 minutes to map your targets.'
+        desc: 'Based on your profile, we recommend a focused strategy to maximize your potential.'
     }
 })
 

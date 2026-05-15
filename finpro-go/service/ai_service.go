@@ -1,14 +1,16 @@
 package service
 
 import (
+	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
+	"io"
 	"log"
+	"net/http"
 	"os"
 	"strings"
-
-	"github.com/google/generative-ai-go/genai"
-	"google.golang.org/api/option"
+	"time"
 )
 
 type AIService interface {
@@ -17,56 +19,88 @@ type AIService interface {
 }
 
 type aiService struct {
-	apiKey string
-	model  string
+	baseUrl string
+	model   string
 }
 
 func NewAIService() AIService {
-	key := os.Getenv("GEMINI_API_KEY")
-	modelName := os.Getenv("GEMINI_MODEL")
+	baseUrl := os.Getenv("OLLAMA_BASE_URL")
+	if baseUrl == "" {
+		baseUrl = "http://localhost:11434"
+	}
+	modelName := os.Getenv("OLLAMA_MODEL")
 	if modelName == "" {
-		modelName = "gemini-1.5-flash" // Default safe model
+		modelName = "llama3"
 	}
 
-	if key == "" {
-		log.Println("[AI] WARNING: GEMINI_API_KEY is empty!")
-	} else {
-		log.Printf("[AI] Gemini API Key detected (prefix: %s...)", key[:5])
-		log.Printf("[AI] Using model: %s", modelName)
-	}
+	log.Printf("[AI] Using Ollama at %s", baseUrl)
+	log.Printf("[AI] Using model: %s", modelName)
 
 	return &aiService{
-		apiKey: key,
-		model:  modelName,
+		baseUrl: baseUrl,
+		model:   modelName,
 	}
 }
 
-func (s *aiService) AnalyzeLearningStyle(ctx context.Context, prompt string) (string, error) {
-	client, err := genai.NewClient(ctx, option.WithAPIKey(s.apiKey))
-	if err != nil {
-		log.Printf("[AI] Failed to create client: %v", err)
-		return "", fmt.Errorf("failed to create Gemini client: %w", err)
+type ollamaRequest struct {
+	Model  string `json:"model"`
+	Prompt string `json:"prompt"`
+	Stream bool   `json:"stream"`
+	Format string `json:"format,omitempty"`
+}
+
+type ollamaResponse struct {
+	Response string `json:"response"`
+	Done     bool   `json:"done"`
+}
+
+func (s *aiService) callOllama(ctx context.Context, prompt string) (string, error) {
+	url := fmt.Sprintf("%s/api/generate", strings.TrimSuffix(s.baseUrl, "/"))
+
+	reqBody := ollamaRequest{
+		Model:  s.model,
+		Prompt: prompt,
+		Stream: false,
+		Format: "json",
 	}
-	defer client.Close()
 
-	// Use configured model from .env
-	model := client.GenerativeModel(s.model)
-	model.SetTemperature(0.7)
-
-	resp, err := model.GenerateContent(ctx, genai.Text(prompt))
+	jsonData, err := json.Marshal(reqBody)
 	if err != nil {
-		log.Printf("[AI] Model %s failed: %v", s.model, err)
 		return "", err
 	}
 
-	if len(resp.Candidates) == 0 || len(resp.Candidates[0].Content.Parts) == 0 {
-		log.Printf("[AI] ERROR: Empty response candidates from Gemini")
-		return "", fmt.Errorf("no response from Gemini")
+	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewBuffer(jsonData))
+	if err != nil {
+		return "", err
+	}
+	req.Header.Set("Content-Type", "application/json")
+
+	// Ollama can be slow on some hardware, so use a longer timeout
+	client := &http.Client{Timeout: 90 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return "", fmt.Errorf("ollama request failed: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		body, _ := io.ReadAll(resp.Body)
+		return "", fmt.Errorf("ollama returned status %d: %s", resp.StatusCode, string(body))
 	}
 
-	var raw string
-	for _, part := range resp.Candidates[0].Content.Parts {
-		raw += fmt.Sprintf("%v", part)
+	var ollamaResp ollamaResponse
+	if err := json.NewDecoder(resp.Body).Decode(&ollamaResp); err != nil {
+		return "", err
+	}
+
+	return ollamaResp.Response, nil
+}
+
+func (s *aiService) AnalyzeLearningStyle(ctx context.Context, prompt string) (string, error) {
+	raw, err := s.callOllama(ctx, prompt)
+	if err != nil {
+		log.Printf("[AI] Ollama analysis failed: %v", err)
+		return "", err
 	}
 
 	raw = strings.TrimSpace(raw)
@@ -85,16 +119,6 @@ func (s *aiService) AnalyzeLearningStyle(ctx context.Context, prompt string) (st
 }
 
 func (s *aiService) Chat(ctx context.Context, userMessage string, learningProfile string) (string, error) {
-	client, err := genai.NewClient(ctx, option.WithAPIKey(s.apiKey))
-	if err != nil {
-		log.Printf("[AI Chat] Failed to create client: %v", err)
-		return "", fmt.Errorf("failed to create Gemini client: %w", err)
-	}
-	defer client.Close()
-
-	model := client.GenerativeModel(s.model)
-	model.SetTemperature(0.8)
-
 	systemContext := fmt.Sprintf(`
 You are Lumora AI, a friendly and motivational study assistant for university students.
 You help students improve their self-regulated learning habits.
@@ -112,20 +136,5 @@ Guidelines:
 
 	fullPrompt := fmt.Sprintf("%s\n\nStudent: %s\n\nLumora AI:", systemContext, userMessage)
 
-	resp, err := model.GenerateContent(ctx, genai.Text(fullPrompt))
-	if err != nil {
-		log.Printf("[AI Chat] Model %s failed: %v", s.model, err)
-		return "", err
-	}
-
-	if len(resp.Candidates) == 0 {
-		return "", fmt.Errorf("no chat response from Gemini")
-	}
-
-	var result string
-	for _, part := range resp.Candidates[0].Content.Parts {
-		result += fmt.Sprintf("%v", part)
-	}
-
-	return strings.TrimSpace(result), nil
+	return s.callOllama(ctx, fullPrompt)
 }

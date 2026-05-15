@@ -25,7 +25,6 @@ type User struct {
 	IsActive           bool           `gorm:"column:is_active;type:tinyint(1);not null;default:1"`
 	DeletedAt          gorm.DeletedAt `gorm:"column:deleted_at;index"`
 
-	AssessmentResponses []AssessmentResponse `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
 	ResultSummaries     []ResultSummary      `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
 	AILogs              []AILog              `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
 	Schedules           []Schedule           `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
@@ -65,24 +64,9 @@ type Question struct {
 	IsActive     bool      `gorm:"column:is_active;type:tinyint(1);not null;default:1" json:"is_active"`
 
 	CreatedBy *Admin               `gorm:"foreignKey:CreatedByID;references:AdminID;constraint:OnDelete:SET NULL"`
-	Responses []AssessmentResponse `gorm:"foreignKey:QuestionID;references:QuestionID;constraint:OnDelete:RESTRICT"`
 }
 
-// =========================
-// ASSESSMENT_RESPONSES
-// =========================
-
-type AssessmentResponse struct {
-	ResponseID  string    `gorm:"column:response_id;type:char(36);primaryKey"`
-	UserID      string    `gorm:"column:user_id;type:char(36);not null;index:idx_assess_user_session,priority:1"`
-	QuestionID  string    `gorm:"column:question_id;type:char(36);not null;index:idx_assess_q"`
-	AnswerValue int       `gorm:"column:answer_value;not null"`
-	SessionID   string    `gorm:"column:session_id;type:char(36);not null;index:idx_assess_user_session,priority:2"`
-	CreatedAt   time.Time `gorm:"column:created_at;autoCreateTime"`
-
-	User     User     `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
-	Question Question `gorm:"foreignKey:QuestionID;references:QuestionID;constraint:OnDelete:RESTRICT"`
-}
+// Removed ASSESSMENT_RESPONSES
 
 // =========================
 // RESULT_SUMMARY

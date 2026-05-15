@@ -41,6 +41,8 @@ class OnboardingController extends Controller
 
     public function submit(Request $request): \Symfony\Component\HttpFoundation\Response
     {
+        set_time_limit(30); // Profile lookup is instant, no AI processing needed
+
         $validated = $request->validate([
             'answers'                => ['required', 'array', 'min:1'],
             'answers.*.question_id'  => ['required', 'string'],
