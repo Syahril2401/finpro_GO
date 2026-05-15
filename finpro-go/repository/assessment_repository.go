@@ -14,6 +14,8 @@ type AssessmentRepository interface {
 	GetLastSummary(userID string) (*model.ResultSummary, error)
 	HasCompletedAssessment(userID string) (bool, error)
 	GetAllEvaluations() ([]model.Evaluation, error)
+	GetLastResult(userID string) (*model.ResultSummary, error)
+	GetAllResults(userID string) ([]model.ResultSummary, error)
 }
 
 type assessmentRepository struct {
@@ -70,4 +72,16 @@ func (r *assessmentRepository) GetAllEvaluations() ([]model.Evaluation, error) {
 	var evaluations []model.Evaluation
 	err := r.db.Find(&evaluations).Error
 	return evaluations, err
+}
+
+func (r *assessmentRepository) GetLastResult(userID string) (*model.ResultSummary, error) {
+	var summary model.ResultSummary
+	err := r.db.Where("user_id = ?", userID).Order("created_at desc").First(&summary).Error
+	return &summary, err
+}
+
+func (r *assessmentRepository) GetAllResults(userID string) ([]model.ResultSummary, error) {
+	var results []model.ResultSummary
+	err := r.db.Where("user_id = ?", userID).Order("created_at desc").Find(&results).Error
+	return results, err
 }

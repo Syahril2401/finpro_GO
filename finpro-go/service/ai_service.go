@@ -9,7 +9,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strings"
 	"time"
 )
 
@@ -19,49 +18,61 @@ type AIService interface {
 }
 
 type aiService struct {
-	baseUrl string
-	model   string
+	apiKey string
+	model  string
 }
 
 func NewAIService() AIService {
-	baseUrl := os.Getenv("OLLAMA_BASE_URL")
-	if baseUrl == "" {
-		baseUrl = "http://localhost:11434"
-	}
-	modelName := os.Getenv("OLLAMA_MODEL")
-	if modelName == "" {
-		modelName = "llama3"
-	}
+	apiKey := os.Getenv("ANTHROPIC_API_KEY")
+	modelName := "claude-3-5-sonnet-latest" // Mandated by audit matrix
 
-	log.Printf("[AI] Using Ollama at %s", baseUrl)
-	log.Printf("[AI] Using model: %s", modelName)
+	if apiKey == "" {
+		log.Printf("[AI] WARNING: ANTHROPIC_API_KEY is not set. Using mock responses to prevent blocking the user flow.")
+	} else {
+		log.Printf("[AI] Using Anthropic Claude API")
+		log.Printf("[AI] Using model: %s", modelName)
+	}
 
 	return &aiService{
-		baseUrl: baseUrl,
-		model:   modelName,
+		apiKey: apiKey,
+		model:  modelName,
 	}
 }
 
-type ollamaRequest struct {
-	Model  string `json:"model"`
-	Prompt string `json:"prompt"`
-	Stream bool   `json:"stream"`
-	Format string `json:"format,omitempty"`
+type anthropicMessage struct {
+	Role    string `json:"role"`
+	Content string `json:"content"`
 }
 
-type ollamaResponse struct {
-	Response string `json:"response"`
-	Done     bool   `json:"done"`
+type anthropicRequest struct {
+	Model     string             `json:"model"`
+	MaxTokens int                `json:"max_tokens"`
+	System    string             `json:"system,omitempty"`
+	Messages  []anthropicMessage `json:"messages"`
 }
 
-func (s *aiService) callOllama(ctx context.Context, prompt string) (string, error) {
-	url := fmt.Sprintf("%s/api/generate", strings.TrimSuffix(s.baseUrl, "/"))
+type anthropicResponse struct {
+	Content []struct {
+		Text string `json:"text"`
+		Type string `json:"type"`
+	} `json:"content"`
+}
 
-	reqBody := ollamaRequest{
-		Model:  s.model,
-		Prompt: prompt,
-		Stream: false,
-		Format: "json",
+func (s *aiService) callAnthropic(ctx context.Context, systemContext, userPrompt string) (string, error) {
+	if s.apiKey == "" {
+		// Mock response so the flow doesn't break during testing
+		return "This is a mock response from Claude Sonnet. Please add ANTHROPIC_API_KEY to your .env to enable real AI explanations.", nil
+	}
+
+	url := "https://api.anthropic.com/v1/messages"
+
+	reqBody := anthropicRequest{
+		Model:     s.model,
+		MaxTokens: 1024,
+		System:    systemContext,
+		Messages: []anthropicMessage{
+			{Role: "user", Content: userPrompt},
+		},
 	}
 
 	jsonData, err := json.Marshal(reqBody)
@@ -73,68 +84,57 @@ func (s *aiService) callOllama(ctx context.Context, prompt string) (string, erro
 	if err != nil {
 		return "", err
 	}
+	
 	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("x-api-key", s.apiKey)
+	req.Header.Set("anthropic-version", "2023-06-01")
 
-	// Ollama can be slow on some hardware, so use a longer timeout
-	client := &http.Client{Timeout: 90 * time.Second}
+	client := &http.Client{Timeout: 30 * time.Second}
 	resp, err := client.Do(req)
 	if err != nil {
-		return "", fmt.Errorf("ollama request failed: %w", err)
+		return "", fmt.Errorf("anthropic request failed: %w", err)
 	}
 	defer resp.Body.Close()
 
+	body, _ := io.ReadAll(resp.Body)
 	if resp.StatusCode != http.StatusOK {
-		body, _ := io.ReadAll(resp.Body)
-		return "", fmt.Errorf("ollama returned status %d: %s", resp.StatusCode, string(body))
+		return "", fmt.Errorf("anthropic returned status %d: %s", resp.StatusCode, string(body))
 	}
 
-	var ollamaResp ollamaResponse
-	if err := json.NewDecoder(resp.Body).Decode(&ollamaResp); err != nil {
+	var anthropicResp anthropicResponse
+	if err := json.Unmarshal(body, &anthropicResp); err != nil {
 		return "", err
 	}
 
-	return ollamaResp.Response, nil
+	if len(anthropicResp.Content) > 0 {
+		return anthropicResp.Content[0].Text, nil
+	}
+
+	return "", fmt.Errorf("empty response from anthropic")
 }
 
 func (s *aiService) AnalyzeLearningStyle(ctx context.Context, prompt string) (string, error) {
-	raw, err := s.callOllama(ctx, prompt)
-	if err != nil {
-		log.Printf("[AI] Ollama analysis failed: %v", err)
-		return "", err
-	}
-
-	raw = strings.TrimSpace(raw)
-	
-	// Robust JSON extraction
-	start := strings.Index(raw, "{")
-	end := strings.LastIndex(raw, "}")
-	
-	if start == -1 || end == -1 || end < start {
-		log.Printf("[AI] ERROR: Failed to find JSON boundaries in response: %s", raw)
-		return raw, nil 
-	}
-
-	cleaned := raw[start : end+1]
-	return cleaned, nil
+	// For Lumora, AnalyzeLearningStyle is rule-based and not handled by AI anymore.
+	// This function remains to satisfy interface, but returns raw JSON if needed.
+	return "{}", nil
 }
 
 func (s *aiService) Chat(ctx context.Context, userMessage string, learningProfile string) (string, error) {
 	systemContext := fmt.Sprintf(`
-You are Lumora AI, a friendly and motivational study assistant for university students.
-You help students improve their self-regulated learning habits.
+You are Lumora AI, an explainer module powered by Claude Sonnet.
+Your ONLY role is to elaborate and explain the pre-determined JSON rule-based outcome provided below.
+DO NOT diagnose, DO NOT change the scores, and DO NOT override any labels.
+Be concise, warm, and encouraging.
 
-The student's learning profile is:
+The student's rule-based profile outcome is:
 %s
 
 Guidelines:
-- Be concise, warm, and encouraging
-- Give practical, actionable advice
-- Stay focused on studying, learning strategies, time management, and academic goals
-- If asked something unrelated to studying, politely redirect to academic topics
-- Respond in the same language the student uses (Indonesian or English)
+- Explain the student's strengths and weaknesses based ONLY on the JSON.
+- Provide practical, actionable advice matching their profile.
+- Stay focused on learning strategies and academic goals.
+- Respond in the language the student uses.
 `, learningProfile)
 
-	fullPrompt := fmt.Sprintf("%s\n\nStudent: %s\n\nLumora AI:", systemContext, userMessage)
-
-	return s.callOllama(ctx, fullPrompt)
+	return s.callAnthropic(ctx, systemContext, userMessage)
 }

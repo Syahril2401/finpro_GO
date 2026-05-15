@@ -27,25 +27,26 @@ func (ctrl *DashboardController) GetDashboard(c *gin.Context) {
 }
 
 func (ctrl *DashboardController) GetPlanner(c *gin.Context) {
-	utils.ResponseJSON(c, http.StatusOK, true, "Planner endpoint reached", gin.H{"message": "Mock data for Planner"})
+	// Simple stub for now
+	utils.ResponseJSON(c, http.StatusOK, true, "Success", gin.H{"schedules": []interface{}{}})
 }
 
 func (ctrl *DashboardController) GetNotes(c *gin.Context) {
-	utils.ResponseJSON(c, http.StatusOK, true, "Notes endpoint reached", gin.H{"message": "Mock data for Notes"})
+	utils.ResponseJSON(c, http.StatusOK, true, "Success", gin.H{"notes": []interface{}{}})
 }
 
 func (ctrl *DashboardController) GetWeeklyTargets(c *gin.Context) {
-	utils.ResponseJSON(c, http.StatusOK, true, "Weekly Targets endpoint reached", gin.H{"message": "Mock data for Weekly Targets"})
+	utils.ResponseJSON(c, http.StatusOK, true, "Success", gin.H{"targets": []interface{}{}})
 }
 
 func (ctrl *DashboardController) GetAIStrategies(c *gin.Context) {
-	utils.ResponseJSON(c, http.StatusOK, true, "AI Strategies endpoint reached", gin.H{"message": "Mock data for AI Strategies"})
+	utils.ResponseJSON(c, http.StatusOK, true, "Success", gin.H{"strategies": []interface{}{}})
 }
 
 func (ctrl *DashboardController) GetProgress(c *gin.Context) {
-	utils.ResponseJSON(c, http.StatusOK, true, "Progress endpoint reached", gin.H{"message": "Mock data for Progress view"})
+	utils.ResponseJSON(c, http.StatusOK, true, "Success", gin.H{"progress": []interface{}{}})
 }
 
 func (ctrl *DashboardController) GetSettings(c *gin.Context) {
-	utils.ResponseJSON(c, http.StatusOK, true, "Settings endpoint reached", gin.H{"message": "Mock data for user Settings"})
+	utils.ResponseJSON(c, http.StatusOK, true, "Success", gin.H{"settings": map[string]interface{}{}})
 }

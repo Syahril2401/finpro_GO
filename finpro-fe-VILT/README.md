@@ -8,7 +8,7 @@
 
 **Lumora** is a cutting-edge mental wellness platform designed to help users track their personal growth through data-driven insights and AI-powered assessments. Built with the **VILT stack** (Vue, Inertia, Laravel, Tailwind), Lumora provides a seamless, reactive experience for users to monitor their mental health journey.
 
-## ✨ Key Features
+## ✨ Key Features 
 
 - **🧠 Self-Assessment Flow**: A guided onboarding process that helps users understand their current mental state.
 - **📊 Interactive Dashboard**: Real-time tracking of consistency, focus sessions, and wellness metrics.

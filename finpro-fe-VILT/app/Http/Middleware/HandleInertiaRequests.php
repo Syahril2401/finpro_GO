@@ -34,6 +34,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'go_token' => \Illuminate\Support\Facades\Session::get('go_token'),
         ];
     }
 }

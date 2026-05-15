@@ -12,15 +12,36 @@ class DashboardController extends Controller
 
     public function index(): Response
     {
-        $overview = $this->api->getDashboard();
-        $data = $overview['data'] ?? [];
+        return Inertia::render('Dashboard');
+    }
 
-        // Last assessment result — prefer session cache if fresh, fallback to API
-        $result = session('onboarding_result') ?: ($data['last_assessment'] ?? []);
+    public function planner(): Response
+    {
+        return Inertia::render('Dashboard/Planner');
+    }
 
-        return Inertia::render('Dashboard', [
-            'dashboard' => $data,
-            'result'    => $result,
-        ]);
+    public function notes(): Response
+    {
+        return Inertia::render('Dashboard/Notes');
+    }
+
+    public function weeklyTargets(): Response
+    {
+        return Inertia::render('Dashboard/WeeklyTargets');
+    }
+
+    public function progress(): Response
+    {
+        return Inertia::render('Dashboard/Progress');
+    }
+
+    public function settings(): Response
+    {
+        return Inertia::render('Dashboard/Settings');
+    }
+
+    public function recommendationDetail($id): Response
+    {
+        return Inertia::render('RecommendationDetail', ['id' => $id]);
     }
 }

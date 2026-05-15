@@ -120,74 +120,107 @@ type AILog struct {
 }
 
 // =========================
-// SCHEDULES
+// SCHEDULES (Planner Sessions)
 // =========================
-
-type ScheduleStatus string
-
-const (
-	SchedulePending   ScheduleStatus = "pending"
-	ScheduleDone      ScheduleStatus = "done"
-	ScheduleCancelled ScheduleStatus = "cancelled"
-)
 
 type Schedule struct {
-	ScheduleID    string         `gorm:"column:schedule_id;type:char(36);primaryKey"`
-	UserID        string         `gorm:"column:user_id;type:char(36);not null;index:idx_schedule_user_start,priority:1"`
-	Title         string         `gorm:"column:title;type:varchar(200);not null"`
-	Description   *string        `gorm:"column:description;type:text"`
-	StartTime     time.Time      `gorm:"column:start_time;not null;index:idx_schedule_user_start,priority:2"`
-	EndTime       *time.Time     `gorm:"column:end_time"`
-	Status        ScheduleStatus `gorm:"column:status;type:enum('pending','done','cancelled');default:'pending'"`
-	GoogleEventID *string        `gorm:"column:google_event_id;type:varchar(200)"`
-	CreatedAt     time.Time      `gorm:"column:created_at;autoCreateTime"`
-	UpdatedAt     time.Time      `gorm:"column:updated_at;autoUpdateTime"`
+	ScheduleID      string     `gorm:"column:schedule_id;type:char(36);primaryKey" json:"id"`
+	UserID          string     `gorm:"column:user_id;type:char(36);not null" json:"user_id"`
+	Title           string     `gorm:"column:title;type:varchar(200);not null" json:"title"`
+	Description     string     `gorm:"column:description;type:text" json:"description"`
+	Date            string     `gorm:"column:date;type:date;not null" json:"date"`
+	StartTime       string     `gorm:"column:start_time;type:varchar(10);not null" json:"start_time"`
+	EndTime         string     `gorm:"column:end_time;type:varchar(10);not null" json:"end_time"`
+	DurationMinutes int        `gorm:"column:duration_minutes;default:0" json:"duration_minutes"`
+	FocusDimension  string     `gorm:"column:focus_dimension;type:varchar(100);default:'General'" json:"focus_dimension"`
+	Status          string     `gorm:"column:status;type:varchar(50);default:'planned'" json:"status"`
+	TargetID        *string    `gorm:"column:target_id;type:char(36)" json:"target_id"`
+	CreatedAt       time.Time  `gorm:"column:created_at;autoCreateTime" json:"created_at"`
+	UpdatedAt       time.Time  `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
 
-	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
+	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE" json:"-"`
 }
 
 // =========================
-// TARGETS
+// WEEKLY TARGETS
 // =========================
-
-type TargetStatus string
-
-const (
-	TargetActive    TargetStatus = "active"
-	TargetCompleted TargetStatus = "completed"
-	TargetCancelled TargetStatus = "cancelled"
-)
 
 type Target struct {
-	TargetID    string       `gorm:"column:target_id;type:char(36);primaryKey"`
-	UserID      string       `gorm:"column:user_id;type:char(36);not null;index:idx_targets_user,priority:1"`
-	Title       string       `gorm:"column:title;type:varchar(200);not null"`
-	Description *string      `gorm:"column:description;type:text"`
-	WeekNumber  *int         `gorm:"column:week_number;index:idx_targets_user,priority:3"`
-	Year        *int         `gorm:"column:year;index:idx_targets_user,priority:2"`
-	Progress    int          `gorm:"column:progress;default:0"`
-	Status      TargetStatus `gorm:"column:status;type:enum('active','completed','cancelled');default:'active'"`
-	CreatedAt   time.Time    `gorm:"column:created_at;autoCreateTime"`
-	UpdatedAt   time.Time    `gorm:"column:updated_at;autoUpdateTime"`
+	TargetID       string    `gorm:"column:target_id;type:char(36);primaryKey" json:"id"`
+	UserID         string    `gorm:"column:user_id;type:char(36);not null" json:"user_id"`
+	Title          string    `gorm:"column:title;type:varchar(200);not null" json:"title"`
+	Description    string    `gorm:"column:description;type:text" json:"description"`
+	FocusDimension string    `gorm:"column:focus_dimension;type:varchar(100);default:'General'" json:"focus_dimension"`
+	Priority       string    `gorm:"column:priority;type:varchar(20);default:'medium'" json:"priority"`
+	DueDate        *string   `gorm:"column:due_date;type:date" json:"due_date"`
+	Status         string    `gorm:"column:status;type:varchar(50);default:'not_started'" json:"status"`
+	Progress       int       `gorm:"column:progress;default:0" json:"progress"`
+	WeekNumber     *int      `gorm:"column:week_number" json:"week_number"`
+	Year           *int      `gorm:"column:year" json:"year"`
+	CreatedAt      time.Time `gorm:"column:created_at;autoCreateTime" json:"created_at"`
+	UpdatedAt      time.Time `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
 
-	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
+	User     User      `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE" json:"-"`
+	Subtasks []Subtask `gorm:"foreignKey:TargetID;references:TargetID;constraint:OnDelete:CASCADE" json:"subtasks"`
 }
 
 // =========================
-// NOTESa
+// SUBTASKS
+// =========================
+
+type Subtask struct {
+	SubtaskID   string     `gorm:"column:subtask_id;type:char(36);primaryKey" json:"id"`
+	TargetID    string     `gorm:"column:target_id;type:char(36);not null" json:"target_id"`
+	UserID      string     `gorm:"column:user_id;type:char(36);not null" json:"user_id"`
+	Title       string     `gorm:"column:title;type:varchar(200);not null" json:"title"`
+	IsCompleted bool       `gorm:"column:is_completed;type:tinyint(1);default:0" json:"is_completed"`
+	CompletedAt *time.Time `gorm:"column:completed_at" json:"completed_at"`
+	CreatedAt   time.Time  `gorm:"column:created_at;autoCreateTime" json:"created_at"`
+	UpdatedAt   time.Time  `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
+
+	Target Target `gorm:"foreignKey:TargetID;references:TargetID;constraint:OnDelete:CASCADE" json:"-"`
+	User   User   `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE" json:"-"`
+}
+
+// =========================
+// NOTIFICATIONS
+// =========================
+
+type Notification struct {
+	NotificationID string    `gorm:"column:notification_id;type:char(36);primaryKey" json:"id"`
+	UserID         string    `gorm:"column:user_id;type:char(36);not null" json:"user_id"`
+	Type           string    `gorm:"column:type;type:varchar(50);not null" json:"type"`
+	Title          string    `gorm:"column:title;type:varchar(200);not null" json:"title"`
+	Message        string    `gorm:"column:message;type:text" json:"message"`
+	IsRead         bool      `gorm:"column:is_read;type:tinyint(1);default:0" json:"is_read"`
+	RelatedID      *string   `gorm:"column:related_id;type:char(36)" json:"related_id"`
+	CreatedAt      time.Time `gorm:"column:created_at;autoCreateTime" json:"created_at"`
+
+	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE" json:"-"`
+}
+
+// =========================
+// NOTES
 // =========================
 
 type Note struct {
-	NoteID     string    `gorm:"column:note_id;type:char(36);primaryKey"`
-	UserID     string    `gorm:"column:user_id;type:char(36);not null"`
-	Title      *string   `gorm:"column:title;type:varchar(200)"`
-	Content    string    `gorm:"column:content;type:text;not null"`
-	Category   *string   `gorm:"column:category;type:varchar(80)"`
-	IsFavorite bool      `gorm:"column:is_favorite;type:tinyint(1);default:0"`
-	CreatedAt  time.Time `gorm:"column:created_at;autoCreateTime"`
-	UpdatedAt  time.Time `gorm:"column:updated_at;autoUpdateTime"`
+	NoteID           string    `gorm:"column:note_id;type:char(36);primaryKey" json:"id"`
+	UserID           string    `gorm:"column:user_id;type:char(36);not null" json:"user_id"`
+	Title            string    `gorm:"column:title;type:varchar(200);default:'Untitled'" json:"title"`
+	ContentJSON      string    `gorm:"column:content_json;type:longtext" json:"content_json"`
+	ContentText      string    `gorm:"column:content_text;type:longtext" json:"content_text"`
+	FocusDimension   string    `gorm:"column:focus_dimension;type:varchar(100);default:'General'" json:"focus_dimension"`
+	Tags             string    `gorm:"column:tags;type:varchar(255)" json:"tags"`
+	Mood             string    `gorm:"column:mood;type:varchar(50)" json:"mood"`
+	ConfidenceLevel  *int      `gorm:"column:confidence_level" json:"confidence_level"`
+	PlannerSessionID *string   `gorm:"column:planner_session_id;type:char(36)" json:"planner_session_id"`
+	TargetID         *string   `gorm:"column:target_id;type:char(36)" json:"target_id"`
+	IsPinned         bool      `gorm:"column:is_pinned;type:tinyint(1);default:0" json:"is_pinned"`
+	IsArchived       bool      `gorm:"column:is_archived;type:tinyint(1);default:0" json:"is_archived"`
+	CreatedAt        time.Time `gorm:"column:created_at;autoCreateTime" json:"created_at"`
+	UpdatedAt        time.Time `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
 
-	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE"`
+	User User `gorm:"foreignKey:UserID;references:UserID;constraint:OnDelete:CASCADE" json:"-"`
 }
 
 // =========================

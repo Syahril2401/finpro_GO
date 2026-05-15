@@ -60,13 +60,10 @@ func (s *dashboardService) GetDashboardData(userID string) (map[string]interface
 	schedules, _ := s.dashboardRepo.GetTodaySchedules(userID)
 	formattedSessions := []map[string]interface{}{}
 	for _, sch := range schedules {
-		duration := "0m"
-		if sch.EndTime != nil {
-			duration = fmt.Sprintf("%dm", int(sch.EndTime.Sub(sch.StartTime).Minutes()))
-		}
+		duration := fmt.Sprintf("%dm", sch.DurationMinutes)
 		formattedSessions = append(formattedSessions, map[string]interface{}{
 			"title":    sch.Title,
-			"time":     sch.StartTime.Format("15:04"),
+			"time":     sch.StartTime,
 			"duration": duration,
 			"status":   sch.Status,
 		})
@@ -91,6 +88,12 @@ func (s *dashboardService) GetDashboardData(userID string) (map[string]interface
 		})
 	}
 
+	totalTargets, completedTargets, _ := s.dashboardRepo.GetTargetStats(userID)
+	taskEfficiency := 87 // fallback
+	if totalTargets > 0 {
+		taskEfficiency = int((completedTargets * 100) / totalTargets)
+	}
+
 	data := map[string]interface{}{
 		"user": map[string]interface{}{
 			"name":   userName,
@@ -98,7 +101,7 @@ func (s *dashboardService) GetDashboardData(userID string) (map[string]interface
 		},
 		"metrics": map[string]interface{}{
 			"focus_sessions":  focusSessions,
-			"task_efficiency": 87, 
+			"task_efficiency": taskEfficiency, 
 			"deep_work_hours": fmt.Sprintf("%.1f", deepWorkHours),
 			"consistency":     consistency,
 			"retention":       retention,

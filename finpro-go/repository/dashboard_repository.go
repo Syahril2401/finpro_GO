@@ -14,6 +14,7 @@ type DashboardRepository interface {
 	GetRecentAILogs(userID string, limit int) ([]model.AILog, error)
 	GetTotalFocusSessions(userID string) (int64, error)
 	GetTotalDeepWorkHours(userID string) (float64, error)
+	GetTargetStats(userID string) (int64, int64, error)
 }
 
 type dashboardRepository struct {
@@ -26,11 +27,8 @@ func NewDashboardRepository(db *gorm.DB) DashboardRepository {
 
 func (r *dashboardRepository) GetTodaySchedules(userID string) ([]model.Schedule, error) {
 	var schedules []model.Schedule
-	now := time.Now()
-	startOfDay := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
-	endOfDay := startOfDay.Add(24 * time.Hour)
-
-	err := r.db.Where("user_id = ? AND start_time >= ? AND start_time < ?", userID, startOfDay, endOfDay).Find(&schedules).Error
+	today := time.Now().Format("2006-01-02")
+	err := r.db.Where("user_id = ? AND date = ?", userID, today).Order("start_time ASC").Find(&schedules).Error
 	return schedules, err
 }
 
@@ -59,17 +57,24 @@ func (r *dashboardRepository) GetTotalFocusSessions(userID string) (int64, error
 }
 
 func (r *dashboardRepository) GetTotalDeepWorkHours(userID string) (float64, error) {
-	var schedules []model.Schedule
-	err := r.db.Where("user_id = ? AND status = ? AND end_time IS NOT NULL", userID, "done").Find(&schedules).Error
-	if err != nil {
+	var total *int
+	err := r.db.Model(&model.Schedule{}).
+		Select("COALESCE(SUM(duration_minutes), 0)").
+		Where("user_id = ? AND status = 'completed'", userID).
+		Scan(&total).Error
+	if err != nil || total == nil {
 		return 0, err
 	}
+	return float64(*total) / 60.0, nil
+}
 
-	var total float64
-	for _, s := range schedules {
-		if s.EndTime != nil {
-			total += s.EndTime.Sub(s.StartTime).Hours()
-		}
+func (r *dashboardRepository) GetTargetStats(userID string) (int64, int64, error) {
+	var total int64
+	var completed int64
+	err := r.db.Model(&model.Target{}).Where("user_id = ?", userID).Count(&total).Error
+	if err != nil {
+		return 0, 0, err
 	}
-	return total, nil
+	err = r.db.Model(&model.Target{}).Where("user_id = ? AND status = ?", userID, "completed").Count(&completed).Error
+	return total, completed, err
 }
